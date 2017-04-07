@@ -3,6 +3,9 @@ class PortfoliosController < ApplicationController
   
   def index
    @portfolio_items = Portfolio.all
+   #scope samples
+   #@angular_portfolio_items = Portfolio.angular
+   #@ruby_on_rails_portfolio_items = Portfolio.ruby_on_rails
   end
   
   def show
