@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407184049) do
+ActiveRecord::Schema.define(version: 20170409222446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170407184049) do
     t.string   "slug"
     t.integer  "status",     default: 0
     t.integer  "topic_id"
+    t.text     "keywords"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
     t.index ["topic_id"], name: "index_blogs_on_topic_id", using: :btree
   end
