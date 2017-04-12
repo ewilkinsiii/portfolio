@@ -16,4 +16,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+  
+  def copyright_generator
+    DarkstarudViewTool::Renderer.copyright "DarkStar UD", "All rights reserved"
+  end
 end

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ewilkinsiii/darkstarud_view_tool
+  revision: 229d0e1ee17c43dd4591782aabf5a2dd4b3f240e
+  specs:
+    darkstarud_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -185,6 +191,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
+  darkstarud_view_tool!
   devise (~> 4.2, >= 4.2.1)
   friendly_id (~> 5.2)
   jbuilder (~> 2.5)
