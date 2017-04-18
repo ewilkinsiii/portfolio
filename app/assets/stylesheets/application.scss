@@ -160,3 +160,20 @@ body {
     width: 55rem;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+  float: left;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    float: left;
+}
