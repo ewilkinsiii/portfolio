@@ -161,6 +161,10 @@ body {
   }
 }
 
+/*
+* Custom Styles
+*/
+
 .hidden {
   display: none;
 }
@@ -176,4 +180,13 @@ label {
     background-color: #0275d8;
     border-color: #0275d8;
     float: left;
+}
+
+.card-block{
+ color: black;
+ text-align: left;
+}
+
+.auth-links a {
+  color: black;
 }
