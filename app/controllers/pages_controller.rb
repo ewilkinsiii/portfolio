@@ -22,7 +22,7 @@ class PagesController < ApplicationController
       redirect_to contact_path
     else
       flash.now[:error] = 'Cannot send message.'
-      render :new
+      #render :new
     end
   end
   
