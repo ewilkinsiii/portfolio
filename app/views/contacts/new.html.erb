@@ -1,6 +1,6 @@
 <h1>Contact</h1>
-<form>
- <%= form_for  contact_path do |f| %>
+<div>
+ <%= form_for  @contact do |f| %>
    <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class:"form-control", required: true %>
@@ -30,4 +30,4 @@
    <%= f.submit 'Send Message', class: "btn btn-primary"%>
    
   <%end%>
-</form>
+</div>
