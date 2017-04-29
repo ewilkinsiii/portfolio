@@ -9,4 +9,5 @@ class Blog < ApplicationRecord
   
   has_many :comments, dependent: :destroy
   
+  scope :latest, -> { order("Id DESC") }
 end
