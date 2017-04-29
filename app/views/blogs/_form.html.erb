@@ -14,9 +14,13 @@
   </div>
   
   <div class="form-group">
-    <%= f.text_area :keywords, class: 'form-control', placeholder: 'Keywords' %>
+    <%= f.text_area :keywords, class: 'form-control', placeholder: 'Meta-tag Keywords' %>
   </div>
-
+  
+  <div class="form-group nested-fields">
+    <%= f.text_field :topic_name, data: {autocomplete_source: Topic.order(:title).map(&:title)}, class: 'form-control', placeholder: 'Topic' %>
+  </div>
+  
   <div class="form-group">
     <%= f.submit "Submit", class: 'btn btn-primary' %>
   </div>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'tech-news', to: 'pages#tech_news'
   
   resources :contacts,  only: [:new, :create]
-
+  resources :topics,  only: [:index]
   resources :blogs do
     member do
       get :toggle_status
