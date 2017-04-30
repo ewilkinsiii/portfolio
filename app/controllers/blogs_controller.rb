@@ -18,6 +18,7 @@ class BlogsController < ApplicationController
     @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords = @blog.keywords
+    @related_post= Blog.where(topic_id: @blog.topic_id).limit(5)
   end
 
   # GET /blogs/new
