@@ -9,6 +9,8 @@ class Blog < ApplicationRecord
   
   has_many :comments, dependent: :destroy
   
+  is_impressionable :counter_cache => true, :column_name => :impressions_count
+  
   scope :latest, -> { order("Id DESC") }
   
   def topic_name

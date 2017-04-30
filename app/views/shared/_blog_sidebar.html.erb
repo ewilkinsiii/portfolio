@@ -18,6 +18,11 @@
   <%if @related_post.nil? %>
     <div class="sidebar-module">
       <h4>Most Viewed Post:</h4>
+      <ol class="list-unstyled">
+        <% most_viewed_helper.each do |b| %>
+          <li><%= link_to "#{b.title}", "blogs/#{b.slug}"%></li>
+        <%end%>
+      </ol>
     </div>
   <%else%>
     <div class="sidebar-module">

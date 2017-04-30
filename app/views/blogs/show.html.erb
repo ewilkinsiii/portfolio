@@ -2,6 +2,7 @@
   
  <h2><%= @blog.title %></h2>
  <h4>Topic: <%=@blog.topic_name%></h4>
+ <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
  <%= link_to 'Edit', edit_blog_path(@blog)if logged_in?(:site_admin) %>
  <p><%= @blog.body %></p>
  

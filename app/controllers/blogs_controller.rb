@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  impressionist actions: [:show], unique: [:session_hash]
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
@@ -15,6 +16,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
+    impressionist(@blog, "message...")
     @comment = Comment.new
     @page_title = @blog.title
     @seo_keywords = @blog.keywords
@@ -75,12 +77,11 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_blog
       @blog = Blog.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, 
                                    :body, 
