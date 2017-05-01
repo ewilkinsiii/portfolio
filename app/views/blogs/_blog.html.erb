@@ -8,5 +8,6 @@
       <%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
   <%end%>
-  <p><%= blog.body %></p>
+  <p><%= markdown blog.body %></p>
+  <p>Tags: <%= raw(blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p> 
 </div>

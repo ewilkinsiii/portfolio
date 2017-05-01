@@ -159,15 +159,14 @@ h6, .h6 {
  * Footer
  */
 
-.blog-footer {
-  margin-top: 20px;
+.blog-footers {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
 }
-.blog-footer p:last-child {
+.blog-footers p:last-child {
   margin-bottom: 0;
 }
 
@@ -216,4 +215,11 @@ ul.ui-autocomplete {
 }
 .topic {
   color: #0275d8;
+}
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
 }

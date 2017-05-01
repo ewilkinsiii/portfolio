@@ -12,6 +12,10 @@ class BlogsController < ApplicationController
     if params[:title]
       topic= Topic.find_by(:title => params[:title])
       @blogs = topic.blogs.page(params[:page]).per(5).latest
+    elsif params[:tag]
+      @blogs = Blog.page.tagged_with(params[:tag]).per(5).latest
+    else
+      @blogs = Blog.page(params[:page]).per(5).latest
     end
   end
   
@@ -79,7 +83,8 @@ class BlogsController < ApplicationController
       params.require(:blog).permit(:title, 
                                    :body, 
                                    :keywords, 
-                                   :topic_name
+                                   :topic_name,
+                                   :tag_list
                                   )
     end
     

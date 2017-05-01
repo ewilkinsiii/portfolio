@@ -2,6 +2,7 @@
   
  <h2><%= @blog.title %></h2>
  <h4>Topic: <%=@blog.topic_name%></h4>
+ <p>Tags: <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
  <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
  <%= link_to 'Edit', edit_blog_path(@blog)if logged_in?(:site_admin) %>
  <p><%= markdown @blog.body %></p>
