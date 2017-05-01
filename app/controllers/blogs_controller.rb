@@ -5,15 +5,16 @@ class BlogsController < ApplicationController
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
-  # GET /blogs
-  # GET /blogs.json
   def index
     @blogs = Blog.page(params[:page]).per(5).latest
     @page_title = "My Portfolio Blog"
+    
+    if params[:title]
+      topic= Topic.find_by(:title => params[:title])
+      @blogs = topic.blogs.page(params[:page]).per(5).latest
+    end
   end
-
-  # GET /blogs/1
-  # GET /blogs/1.json
+  
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
     impressionist(@blog, "message...")
@@ -23,17 +24,13 @@ class BlogsController < ApplicationController
     @related_post= Blog.where(topic_id: @blog.topic_id).limit(5)
   end
 
-  # GET /blogs/new
   def new
     @blog = Blog.new
   end
 
-  # GET /blogs/1/edit
   def edit
   end
 
-  # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -46,8 +43,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
@@ -58,8 +53,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|

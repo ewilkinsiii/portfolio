@@ -20,4 +20,5 @@ class Blog < ApplicationRecord
   def topic_name=(name)
     self.topic = Topic.find_or_create_by(title: name) if title.present?
   end
+  
 end

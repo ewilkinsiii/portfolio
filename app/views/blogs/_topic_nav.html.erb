@@ -1,8 +1,7 @@
 <ul class="nav nav-tabs">
   <% Topic.all.each do |topic| %>
-  
     <li class="nav-item">
-      <a class="nav-link" href="#"><%=topic.title%></a>
+      <%=link_to topic.title, blogs_path(:title => "#{topic.title}")%> | <br>
     </li>
   <%end%>
 </ul>
