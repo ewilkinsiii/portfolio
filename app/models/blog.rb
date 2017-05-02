@@ -12,6 +12,8 @@ class Blog < ApplicationRecord
   
   is_impressionable :counter_cache => true, :column_name => :impressions_count
   
+  mount_uploader :image, BlogUploader
+  
   scope :latest, -> { order("Id DESC") }
   
   def topic_name
@@ -21,5 +23,4 @@ class Blog < ApplicationRecord
   def topic_name=(name)
     self.topic = Topic.find_or_create_by(title: name) if title.present?
   end
-  
 end

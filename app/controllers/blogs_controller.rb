@@ -84,7 +84,8 @@ class BlogsController < ApplicationController
                                    :body, 
                                    :keywords, 
                                    :topic_name,
-                                   :tag_list
+                                   :tag_list,
+                                   :image
                                   )
     end
     

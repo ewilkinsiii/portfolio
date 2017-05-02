@@ -1,0 +1,28 @@
+ <% unless @blog.image?%>
+     <h2><%= @blog.title %></h2>
+     <h4>Topic: <%=@blog.topic_name%></h4>
+     <p>Tags: <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+     <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
+     <%= link_to 'Edit', edit_blog_path(@blog)if logged_in?(:site_admin) %>
+     <p><%= markdown @blog.body %></p>
+ <%else%>
+    <h2><%= @blog.title %></h2>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-5">
+       <%= image_tag @blog.image, width: '100%' unless @blog.image.nil? %>
+      </div>
+      
+      <div class="col-md-5">
+       <h4>Topic: <%=@blog.topic_name%></h4>
+       <p>Tags: <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+       <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
+       <%= link_to 'Edit', edit_blog_path(@blog)if logged_in?(:site_admin) %>
+      </div>
+      <div class="col-md-2">
+      </div>
+     </div>
+    </div>
+    <%= "<p></p><hr>".html_safe unless @blog.image.nil?%>
+    <p><%= markdown @blog.body %></p>
+ <%end%>
