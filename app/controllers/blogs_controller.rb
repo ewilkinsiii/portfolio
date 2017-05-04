@@ -20,12 +20,16 @@ class BlogsController < ApplicationController
   end
   
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    impressionist(@blog, "message...")
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.keywords
-    @related_post= Blog.where(topic_id: @blog.topic_id).limit(5)
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      impressionist(@blog, "message...")
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.keywords
+      @related_post= Blog.where(topic_id: @blog.topic_id).limit(5)
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
   end
 
   def new
