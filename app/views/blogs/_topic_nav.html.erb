@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs">
-  <% Topic.all.each do |topic| %>
+  <% @topics.each do |topic| %>
     <li class="nav-item">
       <%=link_to "#{topic.title} | ", blogs_path(:title => "#{topic.title}")%>
     </li>

@@ -2,11 +2,11 @@ class BlogsController < ApplicationController
   impressionist actions: [:show], unique: [:session_hash]
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_topic, only: [:index]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
   def index
-    @topic= Topic.find_by(:title => params[:title])
     case
       when params[:title] && logged_in?(:site_admin)
         @blogs = @topic.blogs.page(params[:page]).per(5).latest
@@ -100,5 +100,10 @@ class BlogsController < ApplicationController
     
     def set_blog_title
       @page_title = @blog.title
+    end
+    
+    def set_topic
+      @topics= Topic.with_blogs
+      @topic= Topic.find_by(:title => params[:title])
     end
 end
