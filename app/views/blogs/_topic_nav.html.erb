@@ -1,10 +1,9 @@
-<ul class="nav nav-tabs">
+<nav class="breadcrumb">
   <% @topics.each do |topic| %>
-    <li class="nav-item">
-      <%=link_to "#{topic.title} | ", blogs_path(:title => "#{topic.title}")%>
-    </li>
+      <%=link_to "#{topic.title}", blogs_path(:title => "#{topic.title}")%> |
+
   <%end%>
-</ul>
+</nav>
 <br>
 <div id='tag_cloud'>
   <%= fa_icon "tags"%><% tag_cloud Blog.tag_counts, %w{s m l} do |tag, css_class| %>
