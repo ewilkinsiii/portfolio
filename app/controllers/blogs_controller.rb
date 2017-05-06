@@ -104,7 +104,11 @@ class BlogsController < ApplicationController
     end
     
     def set_topic
-      @topics= Topic.with_blogs
+      if logged_in?(:site_admin)
+        @topics= Topic.with_blogs
+      else
+        @topics= Topic.with_blogs_published
+      end
       @topic= Topic.find_by(:title => params[:title])
     end
 end

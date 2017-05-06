@@ -6,4 +6,10 @@ module BlogsHelper
   def most_viewed_helper
     @blog_view = Blog.where('impressions_count > 0').limit(4).order('impressions_count desc')
   end
+  
+  def blog_status_color blog
+    if blog.draft?
+      'color: red;'
+    end
+  end
 end
