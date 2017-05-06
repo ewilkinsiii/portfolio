@@ -94,7 +94,8 @@ class BlogsController < ApplicationController
                                    :keywords, 
                                    :topic_name,
                                    :tag_list,
-                                   :image
+                                   :image,
+                                   :status
                                   )
     end
     
