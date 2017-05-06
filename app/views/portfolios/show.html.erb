@@ -13,10 +13,11 @@
       
       <hr>
       
-      <h3>Technologies Used: </h3>
-      <%@portfolio_item.technologies.each do |t|%>
-        <p><%=t.name%></p>
-      <%end%>
+      <h3><%= fa_icon "code"%> Technologies Used: </h3>
+      <p><%@portfolio_item.technologies.each do |t|%>
+          <span class="badge badge-primary"><%=t.name%></span>
+         <%end%>
+      </p>
       
       <% if logged_in?(:site_admin)%>
         <div>

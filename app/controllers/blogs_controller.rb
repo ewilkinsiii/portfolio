@@ -6,17 +6,22 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
   def index
-    @blogs = Blog.page(params[:page]).per(5).latest
-    @page_title = "My Portfolio Blog"
-    
-    if params[:title]
-      topic= Topic.find_by(:title => params[:title])
-      @blogs = topic.blogs.page(params[:page]).per(5).latest
-    elsif params[:tag]
-      @blogs = Blog.page.tagged_with(params[:tag]).per(5).latest
-    else
-      @blogs = Blog.page(params[:page]).per(5).latest
+    @topic= Topic.find_by(:title => params[:title])
+    case
+      when params[:title] && logged_in?(:site_admin)
+        @blogs = @topic.blogs.page(params[:page]).per(5).latest
+      when params[:title] && !logged_in?(:site_admin)
+        @blogs = @topic.blogs.published.page(params[:page]).per(5).latest
+      when params[:tag] && logged_in?(:site_admin)
+        @blogs = Blog.page.tagged_with(params[:tag]).per(5).latest
+      when params[:tag] && !logged_in?(:site_admin)
+       @blogs = Blog.published.page.tagged_with(params[:tag]).per(5).latest
+      when !logged_in?(:site_admin)
+        @blogs = Blog.published.page(params[:page]).per(5).latest
+      else
+        @blogs = Blog.page(params[:page]).per(5).latest
     end
+    @page_title = "My Portfolio Blog"
   end
   
   def show

@@ -23,4 +23,12 @@ class Blog < ApplicationRecord
   def topic_name=(name)
     self.topic = Topic.find_or_create_by(title: name) if title.present?
   end
+  
+  def blog_status
+    if logged_in?(:user) || !current_user
+      @status = published
+    else
+      @status = all
+    end
+  end
 end
