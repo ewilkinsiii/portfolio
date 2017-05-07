@@ -1,33 +1,37 @@
-<h1>Contact</h1>
-<div>
- <%= form_for  @contact do |f| %>
-   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class:"form-control", required: true %>
-   </div>
-   
-   <br>
-   
-   <div class="form-group">
-     <%= f.label :email %><br>
-     <%= f.email_field :email, class:"form-control", required: true %>
-   </div>
-   
-   <br>
-   <div class="form-group">
-     <%= f.label :message %><br>
-     <%= f.text_area :message, as: :text, class:"form-control", rows:"8"%>
-   </div>
-   
-   <br>
-   <div class="hidden">
-     <%= f.label :nickname %><br>
-     <%= f.text_field :nickname, hint: 'leave this field blank', class:"form-control"  %>
-   </div>
-   
-   <br>
-   
-   <%= f.submit 'Send Message', class: "btn btn-primary"%>
-   
-  <%end%>
+<div class="app-card-container">
+  <div class="card">
+  <h1>Contact</h1>
+  <div>
+   <%= form_for  @contact do |f| %>
+     <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class:"form-control", required: true %>
+     </div>
+     
+     <br>
+     
+     <div class="form-group">
+       <%= f.label :email %><br>
+       <%= f.email_field :email, class:"form-control", required: true %>
+     </div>
+     
+     <br>
+     <div class="form-group">
+       <%= f.label :message %><br>
+       <%= f.text_area :message, as: :text, class:"form-control", rows:"8"%>
+     </div>
+     
+     <br>
+     <div class="hidden">
+       <%= f.label :nickname %><br>
+       <%= f.text_field :nickname, hint: 'leave this field blank', class:"form-control"  %>
+     </div>
+     
+     <br>
+     
+     <%= f.submit 'Send Message', class: "btn btn-primary"%>
+     
+    <%end%>
+  </div>
+ </div>
 </div>
