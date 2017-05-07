@@ -3,20 +3,21 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_topic, only: [:index]
+  before_action :set_user, only: [:index]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
   def index
     case
-      when params[:title] && logged_in?(:site_admin)
+      when params[:title] && @admin_user
         @blogs = @topic.blogs.page(params[:page]).per(5).latest
-      when params[:title] && !logged_in?(:site_admin)
+      when params[:title] && @non_admin
         @blogs = @topic.blogs.published.page(params[:page]).per(5).latest
-      when params[:tag] && logged_in?(:site_admin)
+      when params[:tag] && @admin_user
         @blogs = Blog.page.tagged_with(params[:tag]).per(5).latest
-      when params[:tag] && !logged_in?(:site_admin)
+      when params[:tag] && @non_admin
        @blogs = Blog.published.page.tagged_with(params[:tag]).per(5).latest
-      when !logged_in?(:site_admin)
+      when @non_admin
         @blogs = Blog.published.page(params[:page]).per(5).latest
       else
         @blogs = Blog.page(params[:page]).per(5).latest
@@ -110,5 +111,10 @@ class BlogsController < ApplicationController
         @topics= Topic.with_blogs_published
       end
       @topic= Topic.find_by(:title => params[:title])
+    end
+    
+    def set_user
+      @admin_user = logged_in?(:site_admin)
+      @non_admin = !logged_in?(:site_admin)
     end
 end
