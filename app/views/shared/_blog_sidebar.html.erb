@@ -2,7 +2,7 @@
   <aside class="widget widget_search">
      <%= form_tag search_blogs_path, method: :get, class: "navbar-form navbar-center", role: "search" do %>
       <p>
-        <%=text_field_tag :search, params[:search], class: "form-control", placeholder: "Hit enter search..." %>
+        <%=text_field_tag :search, params[:search], class: "form-control", placeholder: "Hit enter to search..." %>
         <%= button_tag("Search", name: nil, class: "search-button") do%>
           <%= fa_icon "search"%>
         <%end%>
@@ -52,7 +52,6 @@
   <%end%>
 
 	<div class="sidebar">
-		<!-- Recent entries widget-->
 		<aside class="widget widget_recent_entries_custom">
 			<div class="widget-title">
 				<h5>Popular Posts</h5>
@@ -69,10 +68,10 @@
         <%end%>
 			</ul>
 		</aside>
-		<!-- Tags widget-->
+
 		<aside class="widget widget_tag_cloud">
 			<div class="widget-title">
-				<h5>Tags</h5>
+				<h5><%= fa_icon "tags"%> Tags</h5>
 			</div>
 			<div class="tagcloud">
 			  <% tag_cloud Blog.tag_counts, %w{s m l} do |tag, css_class| %>

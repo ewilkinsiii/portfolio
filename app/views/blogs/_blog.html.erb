@@ -4,5 +4,5 @@
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now)%> ago</p>
   <%= render partial: 'blogs/admin_actions', locals: {blog: blog} %>
   <p><%= markdown blog.body %></p>
-  <p><%= fa_icon "tags"%>Tags: <%= raw(blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p> 
+  <div class="post-tags"><%= fa_icon "tags"%> <%= raw(blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
 </div>

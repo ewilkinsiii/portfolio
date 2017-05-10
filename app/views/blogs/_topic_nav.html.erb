@@ -4,9 +4,3 @@
   <%end%>
 </nav>
 <br>
-<div id='tag_cloud'>
-  <%= fa_icon "tags"%><% tag_cloud Blog.tag_counts, %w{s m l} do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>
-<hr>

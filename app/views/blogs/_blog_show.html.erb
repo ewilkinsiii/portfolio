@@ -12,7 +12,7 @@
  <% unless @blog.image?%>
      <h2><%= @blog.title %></h2>
      <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
-     <p><%= fa_icon "tags"%>Tags: <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+     <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
      <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
      <p><%= markdown @blog.body %></p>
  <%else%>
@@ -25,9 +25,8 @@
       
       <div class="col-md-5">
        <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
-       <p><%= fa_icon "tags"%>Tags: <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+       <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
        <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
-       <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-primary" if logged_in?(:site_admin) %>
       </div>
       <div class="col-md-2">
       </div>
