@@ -176,6 +176,9 @@ h6, .h6 {
 .social-links li {
   font-size: 2.5em;
 }
+.quote {
+  font-size: .8em;
+}
 .comment-card > .card {
   margin-top: 15px;
 }
@@ -232,4 +235,236 @@ ul.ui-autocomplete {
 }
 .blog-sidebar-source{
   margin-top: 20px;
+}
+/*
+ * Bootstap 4 styles
+ */
+ 
+.widget_search form {
+    position: relative;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -2px;
+    height: 100%;
+    right: 10px;
+    -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+    color: #ddd;
+}
+
+.search-button:focus,
+.search-button.focus,
+.search-button.active.focus,
+.search-button.active:focus,
+.search-button:active.focus,
+.search-button:active:focus {
+    outline: 0;
+}
+
+.search-button:hover {
+    color: #4a90e2;
+}
+
+.widget_archive ul li a,
+.widget_categories ul li a {
+    margin-right: 5px;
+}
+
+.widget_recent_works,
+.widget_recent_entries a,
+.widget_recent_entries_custom a {
+    color: #313131;
+}
+
+.widget_recent_works img,
+.widget_recent_entries a img,
+.widget_recent_entries_custom a img {
+    border-radius: 3px;
+}
+
+.widget_recent_works > ul {
+    margin: 0 -5px;
+}
+
+.widget_recent_works > ul:before,
+.widget_recent_works > ul:after {
+    content: " ";
+    display: table;
+}
+
+.widget_recent_works > ul:after {
+    clear: both;
+}
+
+.widget_recent_works > ul > li {
+    border: 0 !important;
+    float: left;
+    width: 33.333%;
+    padding: 5px;
+    margin: 0;
+}
+
+.widget_recent_works > ul > li > a:hover {
+    opacity: .5;
+}
+
+.sidebar {
+    padding: 0 0 0 30px;
+}
+.widget {
+    margin: 0 0 50px;
+}
+
+.widget .widget-title {
+    border-bottom: 1px solid rgba(238, 238, 238, .9);
+    padding: 0 0 20px;
+    margin: 0 0 25px;
+}
+
+.widget .widget-title h5 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.widget ul,
+.widget ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li,
+.widget ol li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(238, 238, 238, .9);
+    padding-bottom: 10px;
+}
+
+.widget ul li:last-child,
+.widget ol li:last-child {
+    border: 0;
+}
+
+.widget a {
+    color: #999;
+}
+
+.widget a:hover,
+.widget a:focus {
+    color: #4a90e2;
+}
+
+.widget input,
+.widget select {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #eee;
+    font-family: "Poppins", Arial, serif;
+    text-transform: uppercase;
+    letter-spacing: .09375rem;
+    font-size: .625rem;
+    padding: 1rem .9375rem;
+}
+
+.widget_recent_works,
+.widget_recent_entries a,
+.widget_recent_entries_custom a {
+    color: #313131;
+}
+
+.widget_recent_works img,
+.widget_recent_entries a img,
+.widget_recent_entries_custom a img {
+    border-radius: 3px;
+}
+
+.post-date {
+    font-size: 12px;
+    display: block;
+    opacity: .7;
+}
+
+.widget_recent_entries_custom ul li {
+    display: table;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.widget_recent_entries_custom .wi,
+.widget_recent_entries_custom .wb {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.widget_recent_entries_custom .wi {
+    float: left;
+    width: 74px;
+}
+
+.widget_recent_entries_custom .wi img {
+    width: 100%;
+}
+
+.widget_recent_entries_custom .wb {
+    padding-left: 18px;
+    width: 100%;
+}
+
+/* --- [ Resent Works Widget ] --- */
+
+.widget_recent_works > ul {
+    margin: 0 -5px;
+}
+
+.widget_recent_works > ul:before,
+.widget_recent_works > ul:after {
+    content: " ";
+    display: table;
+}
+
+.widget_recent_works > ul:after {
+    clear: both;
+}
+
+.widget_recent_works > ul > li {
+    border: 0 !important;
+    float: left;
+    width: 33.333%;
+    padding: 5px;
+    margin: 0;
+}
+
+.widget_recent_works > ul > li > a:hover {
+    opacity: .5;
+}
+
+/* --- [ Tags Widget ] --- */
+
+.widget_tag_cloud .tagcloud > a {
+    background: #f2f2f2;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    padding: 2px 15px;
+    margin: 5px 10px 5px 0;
+    height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-size: 7px;
+    color: #111;
+}
+
+.widget_tag_cloud .tagcloud > a:hover {
+    background: #4a90e2;
+    color: #fff;
+    opacity: 1;
 }

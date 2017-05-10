@@ -1,5 +1,6 @@
  <nav class="breadcrumb">
-  <%= link_to "Home", root_path, class: "breadcrumb-item" %>|
+  <%= link_to "Home", root_path, class: "breadcrumb-item" %> |
+  <%= link_to "Blogs", blogs_path %> |
   <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%> |
   <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' | ')) %>
   <span class="pull-right">

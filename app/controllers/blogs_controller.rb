@@ -2,10 +2,16 @@ class BlogsController < ApplicationController
   impressionist actions: [:show], unique: [:session_hash]
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
-  before_action :set_topic, only: [:index]
+  before_action :set_topic, only: [:index, :search]
   before_action :set_user, only: [:index]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
+  
+  def search
+    if params[:search]
+      @blogs= Blog.page.where('title ILIKE ?', "%" + params[:search] + "%").per(5).latest
+    end 
+  end
   
   def index
     case
@@ -32,7 +38,7 @@ class BlogsController < ApplicationController
       @comment = Comment.new
       @page_title = @blog.title
       @seo_keywords = @blog.keywords
-      @related_post= Blog.where(topic_id: @blog.topic_id).limit(5)
+      @related_post= Blog.where(topic_id: @blog.topic_id).take(3)
     else
       redirect_to blogs_path, notice: "You are not authorized to access this page"
     end

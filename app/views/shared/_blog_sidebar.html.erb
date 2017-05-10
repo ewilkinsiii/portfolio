@@ -1,17 +1,34 @@
-<div class="col-sm-3 offset-sm-1 blog-sidebar">
-  <div class="sidebar-module sidebar-module-inset">
-    <h4><%= fa_icon "quote-left"%> Each One Teach One <%= fa_icon "quote-right"%></h4>
+<div class="col-lg-4">
+  <aside class="widget widget_search">
+     <%= form_tag search_blogs_path, method: :get, class: "navbar-form navbar-center", role: "search" do %>
+      <p>
+        <%=text_field_tag :search, params[:search], class: "form-control", placeholder: "Hit enter search..." %>
+        <%= button_tag("Search", name: nil, class: "search-button") do%>
+          <%= fa_icon "search"%>
+        <%end%>
+      </p>
+    <%end%>   
+	</aside>
+	
+  <div class="sidebar-module sidebar-module-inset quote">
+    <h5><%= fa_icon "quote-left"%> Each One Teach One <%= fa_icon "quote-right"%></h5>
     <p>It's the responsibility of all developers not to just be great at your craft but to have a thirst for knowledge and to share that knowledge with others.</p>
   </div>
   
   <div class="sidebar-module">
-    <h4>Follow Me On:</h4>
+    <aside class="widget widget_recent_entries_custom">
+      <div class="widget-title">
+    		<h5>Follow Me On</h5>
+    	</div>
+    </aside>
     <ol class="list-unstyled social-links">
-      <li><a href="https://github.com/ewilkinsiii" target="_blank" ><%= fa_icon "github"%></a></li>
-      <li><a href="http://codepen.io/ewilkinsiii/" target="_blank" ><%= fa_icon "codepen"%></a></li>
-      <li><a href="https://instagram.com/ew3gezs" target="_blank" ><%= fa_icon "instagram"%></a></li>
-      <li><a href="https://twitter.com/ewilkinsiii" target="_blank" ><%= fa_icon "twitter"%></a></li>
-      <li><a href="https://www.linkedin.com/pub/eugene-wilkins-iii/21/aa5/188"target="_blank"><%= fa_icon "linkedin"%></a></li>
+      <li>
+        <a href="https://github.com/ewilkinsiii" target="_blank" ><%= fa_icon "github"%></a>
+        <a href="http://codepen.io/ewilkinsiii/" target="_blank" ><%= fa_icon "codepen"%></a>
+        <a href="https://instagram.com/ew3gezs" target="_blank" ><%= fa_icon "instagram"%></a>
+        <a href="https://twitter.com/ewilkinsiii" target="_blank" ><%= fa_icon "twitter"%></a>
+        <a href="https://www.linkedin.com/pub/eugene-wilkins-iii/21/aa5/188"target="_blank"><%= fa_icon "linkedin"%></a>
+      </li>
     </ol>
   </div>
   
@@ -19,22 +36,49 @@
   <%= source_helper("alert alert-info blog-sidebar-source") %>
  
   
-  <%if @related_post.nil? %>
-    <div class="sidebar-module">
-      <h4>Most Viewed Post:</h4>
-      <ol class="list-unstyled">
-        <% most_viewed_helper.each do |b| %>
-          <li><%= link_to "#{b.title}", "blogs/#{b.slug}"%></li>
-        <%end%>
-      </ol>
-    </div>
-  <%else%>
-    <div class="sidebar-module">
-      <h4>Related Post:</h4>
-      <ol class="list-unstyled">
-        <% @related_post.each do |blog| %>
-          <li><%= link_to "#{blog.title}", blog_path unless blog.id == @blog.id%></li>
-        <%end%>
-      </ol>
+  <%unless @related_post.nil? %>
+    <div class="sidebar">
+      <aside class="widget widget_recent_entries_custom">
+        <div class="widget-title">
+  				<h5>Related Post</h5>
+  			</div>
+        <ol>
+          <% @related_post.each do |blog| %>
+            <li class="clearfix"><%= link_to "#{blog.title}", blog_path unless blog.id == @blog.id%></li>
+          <%end%>
+        </ol>
+      </aside>
     </div>
   <%end%>
+
+	<div class="sidebar">
+		<!-- Recent entries widget-->
+		<aside class="widget widget_recent_entries_custom">
+			<div class="widget-title">
+				<h5>Popular Posts</h5>
+			</div>
+			<ul>
+			  <% most_viewed_helper.each do |b| %>
+				  <li class="clearfix">
+  					<div class="wi"><%= image_tag "1.jpg"%></div>
+  					<div class="wb">
+              <%= link_to "#{b.title}", "blogs/#{b.slug}"%>
+              <span class="post-date"><%=b.created_at.strftime('%b %d, %Y')%></span>
+            </div>
+          </li>
+        <%end%>
+			</ul>
+		</aside>
+		<!-- Tags widget-->
+		<aside class="widget widget_tag_cloud">
+			<div class="widget-title">
+				<h5>Tags</h5>
+			</div>
+			<div class="tagcloud">
+			  <% tag_cloud Blog.tag_counts, %w{s m l} do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+		</aside>
+	</div>
+</div>
