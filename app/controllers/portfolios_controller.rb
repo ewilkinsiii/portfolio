@@ -19,6 +19,8 @@ class PortfoliosController < ApplicationController
   end
   
   def show
+    @last = Portfolio.last
+    @first = Portfolio.first
   end
   
   def new
@@ -43,6 +45,12 @@ class PortfoliosController < ApplicationController
   end
   
   def update
+    if params[:image]
+      params[:image].each do |image|
+        image = Image.update(image: image)
+        image.save
+      end
+    end
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio Item was successfully updated.' }
@@ -71,8 +79,9 @@ class PortfoliosController < ApplicationController
                                       :body, 
                                       :main_image,
                                       :thumb_image,
+                                      :category_id,
+                                      images_attributes: [:id, :image, :_destroy],
                                       technologies_attributes: [:id, :name, :_destroy]
                                      )
   end
-  
 end

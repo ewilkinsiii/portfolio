@@ -50,6 +50,18 @@
       <%= link_to_add_association 'Add Technology', f, :technologies, class: "btn btn-primary" %>
     </div>
     <br>
+    
+    <div class="col-md-12">
+    <h2>Addtional Portfolio Images:</h2>
+    <div>
+      <%= f.fields_for :portfolio_images do |portfolio_image_form|%>
+        <%= render 'portfolio_image_fields', f: portfolio_image_form %>
+      <%end%>
+    </div>
+    <div>
+      <%= link_to_add_association 'Add Image', f, :portfolio_images, class: "btn btn-primary" %>
+    </div>
+    <br>
     <div class="actions">
       <%= f.submit "Save Portfolio Item", class: 'btn btn-primary btn-block' %>
     </div>
