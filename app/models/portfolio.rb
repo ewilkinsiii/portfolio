@@ -9,7 +9,6 @@ class Portfolio < ApplicationRecord
   
   mount_uploader :thumb_image, PortfolioUploader
   mount_uploader :main_image, PortfolioUploader
-  mount_uploader :image, ImageUploader
   
   def self.angular
     where(subtitle: 'Angular')
@@ -21,11 +20,11 @@ class Portfolio < ApplicationRecord
   
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails') }
   
-  def previous
-    Portfolio.where(["id < ?", id]).last
+  def category_name
+    category.try(:name)
   end
 
-  def next_portfolio_item
-    self.class.first(:conditions => ["id > ?", id], :order => "id asc")
+  def category_name=(name)
+    self.category = Category.find_or_create_by(name: name) if name.present?
   end
 end
