@@ -2,6 +2,7 @@
 @import "jquery-ui";
 @import "font-awesome";
 @import "gritter";
+@import "social-share-button";
 
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
@@ -646,6 +647,60 @@ h3.single-portfolio-title {
 .hero-slider .owl-stage-outer {
     height: 100%;
 }
+
+/*------------------------------------------------------------------
+[Social Icons]
+*/
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-list > li {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+}
+
+.social-list > li > a {
+    display: block;
+    background: #f7f7f7;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    color: #313131;
+}
+
+.social-list > li > a:hover,
+.social-list > li > a:focus {
+    opacity: .6;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons > li {
+    display: inline-block;
+    margin: 5px 10px;
+    margin: 5px 15px 5px 0;
+}
+
+.social-icons > li > a {
+    font-size: 14px;
+    color: #333;
+}
+
+.social-icons > li > a:hover,
+.social-icons > li > a:focus {
+    color: #4a90e2;
+}
+
 /*------------------------------------------------------------------
 [Footer]
 */

@@ -21,6 +21,7 @@ class PortfoliosController < ApplicationController
   def show
     @last = Portfolio.last
     @first = Portfolio.first
+    @related_portfolio= Portfolio.where(category_id: @portfolio_item.category_id).take(3)
   end
   
   def new
@@ -72,6 +73,7 @@ class PortfoliosController < ApplicationController
                                       :main_image,
                                       :thumb_image,
                                       :category_name,
+                                      :client,
                                       :image,
                                       portfolio_images_attributes: [:id, :image, :_destroy],
                                       technologies_attributes: [:id, :name, :_destroy]

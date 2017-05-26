@@ -15,6 +15,7 @@
      <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
      <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
      <p><%= markdown @blog.body %></p>
+     <p><%= social_share_button_tag("Eugene Wilkins III's Portfolio") %></p>
  <%else%>
     <h2><%= @blog.title %></h2>
     <div class="container">
@@ -27,11 +28,12 @@
        <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
        <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
        <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
+       
       </div>
       <div class="col-md-2">
       </div>
      </div>
     </div>
     <%= "<p></p><hr>".html_safe unless @blog.image.nil?%>
-    <p><%= markdown @blog.body %></p>
+    <p><%= markdown @blog.body %> <%= social_share_button_tag("Eugene Wilkins III's Portfolio") %></p>
  <%end%>
