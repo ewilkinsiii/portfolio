@@ -177,3 +177,4 @@ ActiveRecord::Schema.define(version: 20170523045823) do
   add_foreign_key "portfolio_images", "portfolios"
   add_foreign_key "technologies", "portfolios"
 end
+
