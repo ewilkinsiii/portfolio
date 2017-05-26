@@ -90,38 +90,19 @@
   		</div>
   		<br>
   		<div class="row row-portfolio row-related-portfolio" date-portfolio-type="" data-columns="3" data-overlay="">
-  			<div class="portfolio-item design undefined">
-  				<div class="portfolio-wrapper">
-  					<%= image_tag "img-2.jpg", width: "100%"%>
-  					<div class="portfolio-overlay"></div>
-  					<div class="portfolio-caption">
-  						<h5 class="portfolio-title">Mutualismi</h5>
-  					</div><a class="portfolio-link" href="portfolio-single.html"></a>
-  				</div>
-  			</div>
-  			<div class="portfolio-item design undefined">
-  				<div class="portfolio-wrapper">
-  					<%= image_tag "img-2.jpg", width: "100%"%>
-  					<div class="portfolio-overlay"></div>
-  					<div class="portfolio-caption">
-  						<h5 class="portfolio-title">The Perfume</h5>
-  					</div><a class="portfolio-link" href="portfolio-single.html"></a>
-  				</div>
-  			</div>
-  			<div class="portfolio-item design undefined">
-  				<div class="portfolio-wrapper">
-  					<%= image_tag "img-2.jpg", width: "100%"%>
-  					<div class="portfolio-overlay"></div>
-  					<div class="portfolio-caption">
-  						<h5 class="portfolio-title">Bumblebee Icons</h5>
-  					</div><a class="portfolio-link" href="portfolio-single.html"></a>
-  				</div>
-  			</div>
+  			<% @related_portfolio.each do |portfolio| %>
+	  			<div class="portfolio-item design undefined">
+	  				<div class="portfolio-wrapper">
+	  					<%= image_tag portfolio_img(portfolio.main_image, 'main'), width: '100%'%>
+	  					<div class="portfolio-overlay"></div>
+	  					<div class="portfolio-caption">
+	  						<h5 class="portfolio-title"><%= portfolio.title%></h5>
+	  					</div><%= link_to "", portfolio_show_path(portfolio), class: "portfolio-link"%>
+	  				</div>
+	  			</div>
+	  		<%end%>
   		</div>
   	</div>
   </section>
-  
-  <!-- Related Works end-->
-  
   <%= render 'show_page_nav'%>
 </div>
