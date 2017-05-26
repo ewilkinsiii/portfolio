@@ -11,6 +11,7 @@
           <%= nav_helper 'text-white', 'li' %>
           <li><%= link_to "Create New Item", new_portfolio_path, class: "text-white" if logged_in?(:site_admin)%></li>
           <%= login_helper 'text-white'%>
+          <li><%= link_to "Admin", rails_admin_path, class: 'text-white' if logged_in?(:site_admin)%></li>
         </ul>
       </div>
     </div>

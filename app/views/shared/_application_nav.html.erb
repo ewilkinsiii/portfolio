@@ -4,6 +4,8 @@
     <nav class="nav nav-masthead app-nav">
       <%= nav_helper 'nav-link', 'span' %>
       <%= login_helper 'nav-link' %>
+      
+      <%= link_to "Admin", rails_admin_path, class: 'nav-link' if logged_in?(:site_admin)%>
     </nav>
   </div>
 </div>
