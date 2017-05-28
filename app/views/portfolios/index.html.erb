@@ -1,5 +1,11 @@
 <div class="album text-muted">
   <div class="container">
+    <nav class="breadcrumb">
+      <% @category_items.each do |category| %>
+        <%=link_to "#{category.name}", portfolios_path(:name => "#{category.name}")%> |
+      <%end%>
+    </nav>
+    <br>
     <%= source_helper("alert alert-warning")  %>
     <div class="row <%= "sortable" if logged_in?(:site_admin)%>">
       <%= render partial: 'portfolio_item', collection: @portfolio_items %>
