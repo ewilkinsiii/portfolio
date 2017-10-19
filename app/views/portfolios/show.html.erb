@@ -43,7 +43,7 @@
 							<h5>Client:</h5> <%= @portfolio_item.client %>
 						</li>
 						<li>
-							<h5>Category:</h5> <%= @portfolio_item.category_name%>
+							<h5>Category:</h5> <%=link_to "#{@portfolio_item.category_name}", portfolios_path(:name => "#{@portfolio_item.category_name}")%>
 						</li>
 						<li>
 							<h5><%= fa_icon "code"%> Technologies Used:</h5>
@@ -81,7 +81,7 @@
 <br>
 <!-- Related Works-->
 <div class="wrapper">
-  <section class="module module-divider-top">
+  <section class="module module-divider-top escheresque_ste">
   	<div class="container">
   		<div class="row">
   			<div class="col-md-12">

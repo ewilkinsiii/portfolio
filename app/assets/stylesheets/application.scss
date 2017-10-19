@@ -181,6 +181,9 @@ label {
     float: left;
 }
 
+.card{
+  background-color: rgba(245, 245, 245, 0.4);
+}
 .card-block{
  color: black;
  text-align: left;
@@ -198,6 +201,7 @@ label {
   width: 22rem;
   margin: 0 auto;
   float: none;
+  background-color: rgba(245, 245, 245, 0.4);
 }
 
 .app-nav span{
@@ -225,6 +229,7 @@ label {
 }
 
 .tech-news{
+  font-family: 'Indie Flower', cursive;
   color: black;
   margin: 20px;
 }
@@ -235,6 +240,11 @@ label {
 
 .tech-news >.card {
   padding: 30px;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(245, 245, 245, 0.4);
 }
 .app-card-container {
   color: black;

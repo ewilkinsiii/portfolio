@@ -15,12 +15,7 @@
     <p>It's the responsibility of all developers not to just be great at your craft but to have a thirst for knowledge and to share that knowledge with others.</p>
   </div>
   
-  <div class="sidebar-module">
-    <aside class="widget widget_recent_entries_custom">
-      <div class="widget-title">
-    		<h5>Follow Me On</h5>
-    	</div>
-    </aside>
+  <div class="sidebar">
     <ol class="list-unstyled social-links">
       <li>
         <a href="https://github.com/ewilkinsiii" target="_blank" ><%= fa_icon "github"%></a>
@@ -44,7 +39,9 @@
   			</div>
         <ol>
           <% @related_post.each do |blog| %>
-            <li class="clearfix"><%= link_to "#{blog.title}", blog_path unless blog.id == @blog.id%></li>
+            <%if  blog.id != @blog.id %>
+              <li class="clearfix"><%= link_to "#{blog.title}", blog_path(blog)%></li>
+            <%end%>
           <%end%>
         </ol>
       </aside>
@@ -61,7 +58,7 @@
 				  <li class="clearfix">
   					<div class="wi"><%= image_tag "1.jpg"%></div>
   					<div class="wb">
-              <%= link_to "#{b.title}", "blogs/#{b.slug}"%>
+              <%= link_to "#{b.title}", blog_path(b)%>
               <span class="post-date"><%=b.created_at.strftime('%b %d, %Y')%></span>
             </div>
           </li>

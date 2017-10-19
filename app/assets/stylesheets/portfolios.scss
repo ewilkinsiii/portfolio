@@ -16,7 +16,7 @@ body {
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: #009ccf;
 }
 
 .jumbotron p:last-child {
@@ -43,13 +43,26 @@ body {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  background: transparent;
 }
 
 .card > img {
   margin-bottom: .75rem;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  box-shadow: 0px 0px 0px 7px #000;
 }
 
 .card-text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
   font-size: 85%;
 }
 
@@ -146,6 +159,7 @@ footer p {
 .portfolio-wrapper {
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #000;
 }
 
 .portfolio-overlay {
@@ -763,4 +777,35 @@ h3.single-portfolio-title {
 }
 .breadcrumb{
     background: transparent;
+}
+.brick{
+    background: image-url("brickwall.png");
+}
+
+.escheresque_ste{
+    background-color: #78d4f7;
+}
+
+.polaroid {
+  position: relative;
+  width: 100%;
+}
+ 
+.polaroid img {
+  margin-bottom: .75rem;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+  margin-bottom: 1.75rem;
 }
