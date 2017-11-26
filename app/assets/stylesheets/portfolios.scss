@@ -16,7 +16,7 @@ body {
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-bottom: 0;
-  background-color: #009ccf;
+  background-color: white;
 }
 
 .jumbotron p:last-child {
@@ -28,6 +28,7 @@ body {
 }
 
 .jumbotron .container {
+  min-height: 10rem;
   max-width: 40rem;
 }
 

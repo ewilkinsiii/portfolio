@@ -19,5 +19,6 @@
 //= require gritter
 //= require cable
 //= require social-share-button
+//= require md_simple_editor
 //= require turbolinks
 //= require_tree .
