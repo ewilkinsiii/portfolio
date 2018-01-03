@@ -58,7 +58,7 @@ GEM
     buftok (0.2.0)
     builder (3.2.3)
     byebug (9.0.6)
-    carrierwave (1.0.0)
+    carrierwave (1.2.2)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -155,7 +155,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_magick (4.7.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     naught (1.1.0)
@@ -269,7 +269,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
   byebug
-  carrierwave (~> 1.0)
+  carrierwave (~> 1.2)
   carrierwave-aws (~> 1.1)
   cocoon (~> 1.2, >= 1.2.9)
   coffee-rails (~> 4.2)
