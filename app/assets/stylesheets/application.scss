@@ -256,3 +256,17 @@ label {
 .profile-img {
   border: 1px solid gray;
 }
+.card-block{
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.resume{
+  margin-right:5px;
+}
+.hire-button{
+  float: right;
+
+  position: relative;
+  left: -35%; /* or right 50% */
+  text-align: left;
+}

@@ -1,4 +1,4 @@
-<div class="container portfolio-container">
+<div class="container portfolio-container brick">
   <div class="row">
     <div class="col-md-7">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -12,7 +12,7 @@
 				   	<%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%', class: "d-block img-fluid" %>
 				  </div>
 					<%@portfolio_item.portfolio_images.each do |i|%>
-						<div class="carousel-item portfolioimg">
+						<div class="carousel-item portfolioimg cover">
 							<%= image_tag i.image, height: '100%', width: '100%', class: "d-block img-fluid" %>
 						</div>
 				  <%end%>

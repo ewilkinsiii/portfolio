@@ -7,7 +7,7 @@
     </nav>
     <br>
     <%= source_helper("alert alert-warning")  %>
-    <div class="row <%= "sortable" if logged_in?(:site_admin)%>">
+    <div class="row blog-magazine <%= "sortable" if logged_in?(:site_admin)%>">
       <%= render partial: 'portfolio_item', collection: @portfolio_items %>
     </div>
   </div>

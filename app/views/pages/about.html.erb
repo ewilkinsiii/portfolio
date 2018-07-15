@@ -7,13 +7,63 @@
       
       <div class="row">
         <div class="col-md-4">
-            <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
+          <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
+          <p class="lead card-block">
+           <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-primary hire-button"%>
+          </p>
         </div>
           
         <div class="col-md-8">
           <p>Innovative catalyst, with a wide range of functional expertise in Information Technology: programming languages, framework, databases, and platforms.  A quality-focused, technology professional with over five years’ experience in web development with Drupal, and two year experience with Ruby on Rails.  Excels equally working autonomously or as part of a team.  Versatile and flexible with the ability to thrive in high-pressure situations.  Proactively navigates intense workloads.  Demonstrated business acumen and ability to meet fiscal and deadline commitments.  </p>
-          <p class="lead">
-           <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-primary"%>
+          <p>
+            <button 
+              class="btn btn-primary resume" 
+              type='button'
+              data-toggle="collapse"
+              data-target="#jobHistory"
+              aria-expanded="false"
+              aria-controler="jobHistory"
+            >
+              Job History
+            </button>
+            
+            <button 
+              class="btn btn-primary" 
+              type='button'
+              data-toggle="collapse"
+              data-target="#education"
+              aria-expanded="false"
+              aria-controler="education"
+            >
+              Education
+            </button>
+          </p>
+          <br>
+          <br>
+          <p>
+            <div class="collapse" id="jobHistory">
+              <div class="card card-block">
+                Job 1
+              </div>
+              <div class="card card-block">
+                Job 2
+              </div>
+              <div class="card card-block">
+                Job 3
+              </div>
+            </div>
+            
+            <div class="collapse" id="education">
+              <div class="card card-block">
+                School 1
+              </div>
+              <div class="card card-block">
+                School 2
+              </div>
+              <div class="card card-block">
+                School 3
+              </div>
+            </div>
           </p>
         </div>
       </div>

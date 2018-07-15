@@ -6,6 +6,7 @@
 
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
+  background-color: #fafafa;
 }
 
 .navbar {
@@ -346,8 +347,8 @@ footer p {
 }
 
 .portfoli-details {
-    border-top: 1px solid rgba(238, 238, 238, .9);
-    border-bottom: 1px solid rgba(238, 238, 238, .9);
+    border-top: 1px solid rgba(43, 40, 40, 0.9);
+    border-bottom: 1px solid rgba(43, 40, 40, 0.9);
     padding: 20px 0;
     margin: 0 0 0;
 }
@@ -449,6 +450,11 @@ h3.single-portfolio-title {
     position: relative;
 }
 
+.cover {
+  object-fit: cover;
+  width: 600px;
+  height: 400px
+}
 .image-slider img {
     width: 100%;
 }
@@ -780,11 +786,13 @@ h3.single-portfolio-title {
     background: transparent;
 }
 .brick{
-    background: image-url("brickwall.png");
+    background-color: #fafafa;
 }
 
+
+
 .escheresque_ste{
-    background-color: #78d4f7;
+    background-color: white;
 }
 
 .polaroid {
