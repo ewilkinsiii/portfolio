@@ -9,6 +9,8 @@
         <div class="col-md-4">
           <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
           <div class="skills">
+            <h3 class="skill">Technical Skills</h3>
+            <hr>
             <% @skills.each do |skill|%>
             <div class="skill">
               <h4><%=skill.title%></h4>
@@ -20,6 +22,7 @@
                   aria-valuemax="100"
                   style="width: <%=skill.percent_utilized%>%"
                 >
+                  <%=skill.percent_utilized%>%
                 </div>
               </div>
             </div>
@@ -41,7 +44,7 @@
               aria-expanded="false"
               aria-controler="jobHistory"
             >
-              Job History
+              Professional Experience
             </button>
             
             <button 
@@ -52,7 +55,7 @@
               aria-expanded="false"
               aria-controler="education"
             >
-              Education
+              Education & Training
             </button>
           </p>
           <br>
