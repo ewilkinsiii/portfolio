@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716031200) do
+ActiveRecord::Schema.define(version: 20180717175813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,50 @@ ActiveRecord::Schema.define(version: 20180716031200) do
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "description"
+    t.string   "state"
+    t.string   "city"
+    t.string   "start_month"
+    t.integer  "start_year"
+    t.string   "end_month"
+    t.integer  "end_year"
+    t.text     "thumb_image"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_educations_on_user_id", using: :btree
+  end
+
+  create_table "experience_desciptions", force: :cascade do |t|
+    t.string   "name"
+    t.text     "body"
+    t.integer  "experience_id"
+    t.integer  "position"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["experience_id"], name: "index_experience_desciptions_on_experience_id", using: :btree
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "state"
+    t.string   "city"
+    t.string   "start_month"
+    t.integer  "start_year"
+    t.string   "end_month"
+    t.integer  "end_year"
+    t.integer  "phone"
+    t.text     "thumb_image"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -188,6 +232,9 @@ ActiveRecord::Schema.define(version: 20180716031200) do
   add_foreign_key "blogs", "topics"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
+  add_foreign_key "educations", "users"
+  add_foreign_key "experience_desciptions", "experiences"
+  add_foreign_key "experiences", "users"
   add_foreign_key "portfolio_images", "portfolios"
   add_foreign_key "technologies", "portfolios"
 end
