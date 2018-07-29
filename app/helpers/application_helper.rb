@@ -32,7 +32,7 @@ module ApplicationHelper
         title: 'About Me'
       },
       {
-        url: contact_path,
+        url: new_contact_path,
         title: 'Contact'
       },
       {
@@ -93,4 +93,9 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(content).html_safe
   end
+  
+  def gravatar_helper ref
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(ref.email)}",class: "img-circle", width: 60
+  end
+  
 end

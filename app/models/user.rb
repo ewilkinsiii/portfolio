@@ -16,8 +16,9 @@ class User < ApplicationRecord
   
   has_many :comments, dependent: :destroy
   has_many :addresses, dependent: :destroy
-  has_many :experience, dependent: :destroy
+  has_many :experiences, dependent: :destroy
   has_many :educations, dependent: :destroy
+  has_many :refs, dependent: :destroy
   
   def first_name
     self.name.split.first

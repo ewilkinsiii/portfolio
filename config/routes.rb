@@ -6,9 +6,18 @@ Rails.application.routes.draw do
   end
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   
-  get 'about-me', to: 'pages#about'
-  get 'contact', to: 'pages#contact'
+  get 'about-me', to: 'pages#about' do
+    put :sort, on: :collection
+    
+  end
+  
   get 'tech-news', to: 'pages#tech_news'
+  
+  resources :refs do
+    member do
+      get :toggle_status
+    end
+  end
   
   resources :contacts,  only: [:new, :create]
   resources :topics,  only: [:index]

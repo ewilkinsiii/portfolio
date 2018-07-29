@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
   def new
+    @user = User.find(1)
+    @address = @user.addresses[0]
     @contact = Contact.new
   end
 

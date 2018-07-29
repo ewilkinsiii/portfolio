@@ -1,0 +1,29 @@
+<div class="tab-pane fade scrollLeft" id="experiece" role="tabpanel" aria-labelledby="experiece-tab">
+  <p></p>
+  <% @experieces.each do |experiece|%>
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <b><%= experiece.name%></b>, <%=  experiece.city + ' ' +  experiece.state  + '.'%> 
+            <br>
+            <%= experiece.title %>
+          </div>
+          <div class="col-md-6">
+            <%= experiece.start_month + ' ' + experiece.start_year.to_s %> - 
+            <%= experiece.end_month + ' ' + experiece.end_year.to_s %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush <%= "sortable" if logged_in?(:site_admin)%>">
+         <% experiece.experience_desciptions.each do |desciption| %>
+           <article class="post" data-id="<%= desciption.id %>">
+             <li class="list-group-item"><%= desciption.body%></i>
+           </article>
+         <%end%>
+        </ul>
+      </div>
+    </div>
+  <%end%>
+</div>

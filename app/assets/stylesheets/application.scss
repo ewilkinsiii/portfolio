@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import "gritter";
+@import "font-awesome";
+@import "perfect-scrollbar";
 
 /*
  * Globals
@@ -9,7 +11,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: blue;
 }
 
 /* Custom default button */
@@ -190,7 +192,7 @@ label {
     float: left;
 }
 
-.card{
+.cards{
   background-color: rgba(245, 245, 245, 0.4);
 }
 .card-block{
@@ -260,7 +262,7 @@ label {
   text-align: left;
 }
 .app-card-container > .card {
-  padding: 40px;
+  padding: 10px;
 }
 .profile-img {
   border: 1px solid gray;
@@ -282,4 +284,181 @@ label {
 .skill{
   margin-top:10px;
   margin-bottom:10px;
+}
+.ref-card > .card {
+  margin-top: 15px;
+}
+
+.ref-attribution {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.ref-name {
+  font-weight: 700;
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+blockquote{
+    border-left:none
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.2);   
+}
+
+.quote-box{
+    
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: -100px;
+    border-radius: 17px;
+    background-color: #F5F5F5;
+    margin-top: 25px;
+    color:black;
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px #E0E0E0;
+    
+}
+
+.quotation-mark{
+    
+    margin-top: -10px;
+    font-weight: bold;
+    font-size:100px;
+    color:white;
+    font-family: "Times New Roman", Georgia, Serif;
+    
+}
+
+.quote-text{
+    
+    font-size: 19px;
+    margin-top: -65px;
+}
+
+
+/* Contact start */
+
+.header-title
+{
+  text-align: center;
+  color:#00bfff;
+}
+
+#tip 
+{
+    display:none;  
+}
+
+.fadeIn
+{
+  animation-duration: 3s;
+}
+
+.form-control
+{
+	border-radius:0px;
+	border:1px solid #EDEDED;
+}
+
+.form-control:focus
+{
+	border:1px solid #00bfff;
+}
+
+.textarea-contact
+{
+	resize:none; 
+}
+
+.btn-send
+{
+	border-radius: 0px;
+	border:1px solid #00bfff;
+	background:#00bfff;
+	color:#fff; 
+}
+
+.btn-send:hover
+{
+	border:1px solid #00bfff;
+	background:#fff;
+	color:#00bfff;
+	transition:background 0.5s;   
+}
+
+.second-portion
+{
+	margin-top:50px; 
+}
+.box > .icon { text-align: center; position: relative; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #00bfff; vertical-align: middle; }
+.box > .icon:hover > .image { background: #333; }
+.box > .icon > .image > i { font-size: 36px !important; color: #fff !important; }
+.box > .icon:hover > .image > i { color: white !important; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #e0e0e0; padding: 15px 0 10px 0; min-height:163px;}
+.box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #e0e0e0; color: white; }
+.box > .icon > .info > h3.title { font-family: "Robot",sans-serif !important; font-size: 16px; color: #222; font-weight: 700; }
+.box > .icon > .info > p { font-family: "Robot",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 20px;}
+.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
+.box > .icon > .info > .more a { font-family: "Robot",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
+.box .space { height: 30px; }
+
+@media only screen and (max-width: 768px)
+{
+	.contact-form
+	{
+		margin-top:25px; 
+	}
+
+	.btn-send
+	{
+		width: 100%;
+		padding:10px; 
+	}
+
+	.second-portion
+	{
+		margin-top:25px; 
+	}
+}
+	/* Conatct end */
+.title{
+  margin-top:25px;
+}
+
+.scrollLeft {
+  width: 90%;
+  height: 550px;
+  margin: 50px auto 0 auto;
+  position: relative;
+  overflow: auto;
+}
+
+.progress-bar{
+  background-color: #00bfff;
+}
+
+a, a:focus, a:hover {
+    color: #00bfff; 
+}
+
+p.about {
+    line-height: 2;
+}
+
+@media screen and (min-width: 601px) {
+  p.about {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p.about {
+    font-size: 12px;
+  }
 }

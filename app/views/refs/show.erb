@@ -1,0 +1,25 @@
+<div class="app-card-container">
+  <blockquote class="quote-box">
+    <p class="quotation-mark">
+      “
+    </p>
+    <p class="quote-text">
+      <%= @ref.comment %> 
+    </p>
+    <hr>
+    <div class="blog-post-actions">
+      <div class="row">
+        <div class="col-md-1">
+        <p class="blog-post-bottom pull-left">
+          <%= gravatar_helper @ref%>
+        </div>
+        <div class="col-md-6">
+          <%= "I've known " +  @ref.name + " for " + @years.to_s + " years as his " + @ref.relationship.name + "." %>
+          Comment posted by <span class="ref-name"><%= @ref.name %></span> <%= distance_of_time_in_words(@ref.created_at, Time.now) %> ago
+          <span class="badge quote-badge">896</span>  ❤
+        </div>
+        </p>
+      </div>
+    </div>
+  </blockquote>
+</div>

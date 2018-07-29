@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180717175813) do
+ActiveRecord::Schema.define(version: 20180724210929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
+    t.string   "street"
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "country"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(version: 20180717175813) do
     t.integer  "start_year"
     t.string   "end_month"
     t.integer  "end_year"
-    t.integer  "phone"
+    t.string   "phone"
     t.text     "thumb_image"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
@@ -160,6 +161,31 @@ ActiveRecord::Schema.define(version: 20180717175813) do
     t.integer  "position"
     t.string   "client"
     t.integer  "category_id"
+  end
+
+  create_table "refs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "may_contact"
+    t.text     "comment"
+    t.integer  "years_known"
+    t.string   "company"
+    t.string   "project"
+    t.string   "code"
+    t.integer  "relationship_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "slug"
+    t.index ["relationship_id"], name: "index_refs_on_relationship_id", using: :btree
+    t.index ["slug"], name: "index_refs_on_slug", unique: true, using: :btree
+    t.index ["user_id"], name: "index_refs_on_user_id", using: :btree
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
@@ -236,5 +262,7 @@ ActiveRecord::Schema.define(version: 20180717175813) do
   add_foreign_key "experience_desciptions", "experiences"
   add_foreign_key "experiences", "users"
   add_foreign_key "portfolio_images", "portfolios"
+  add_foreign_key "refs", "relationships"
+  add_foreign_key "refs", "users"
   add_foreign_key "technologies", "portfolios"
 end

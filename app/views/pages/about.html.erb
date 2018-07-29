@@ -1,90 +1,76 @@
-<div class="containter">
-  <div class="app-card-container">
-    <div class="card">
-      <h1>A Little Bit About Myself</h1>
-      
-      <hr>
-      
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
-          <div class="skills">
-            <h3 class="skill">Technical Skills</h3>
-            <hr>
-            <% @skills.each do |skill|%>
-            <div class="skill">
-              <h4><%=skill.title%></h4>
-              <div class="progress">
-                <div 
-                  class="progress-bar progress-bar-striped bg-success"
-                  role="progressbar"
-                  aria-valuenow="<%=skill.percent_utilized%>"
-                  aria-valuemax="100"
-                  style="width: <%=skill.percent_utilized%>%"
-                >
-                  <%=skill.percent_utilized%>%
-                </div>
+<div class="app-card-container">
+  <div class="card">
+    <h1 class="header-title">A Little Bit About Myself</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-3">
+        <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
+        <div class="skills">
+          <h3 class="skill">Technical Skills</h3>
+          <hr>
+          <% @skills.each do |skill|%>
+          <div class="skill">
+            <h4><%=skill.title%></h4>
+            <div class="progress">
+              <div 
+                class="progress-bar progress-bar-striped bg-send"
+                role="progressbar"
+                aria-valuenow="<%=skill.percent_utilized%>"
+                aria-valuemax="100"
+                style="width: <%=skill.percent_utilized%>%"
+              >
+                <%=skill.percent_utilized%>%
               </div>
             </div>
-            <%end%>
           </div>
-          <p class="lead card-block">
-           <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-primary hire-button"%>
-          </p>
+          <%end%>
         </div>
-          
-        <div class="col-md-8">
-          <p>Innovative catalyst, with a wide range of functional expertise in Information Technology: programming languages, framework, databases, and platforms.  A quality-focused, technology professional with over five years’ experience in web development with Drupal, and two year experience with Ruby on Rails.  Excels equally working autonomously or as part of a team.  Versatile and flexible with the ability to thrive in high-pressure situations.  Proactively navigates intense workloads.  Demonstrated business acumen and ability to meet fiscal and deadline commitments.  </p>
-          <p>
-            <button 
-              class="btn btn-primary resume" 
-              type='button'
-              data-toggle="collapse"
-              data-target="#jobHistory"
-              aria-expanded="false"
-              aria-controler="jobHistory"
-            >
-              Professional Experience
-            </button>
-            
-            <button 
-              class="btn btn-primary" 
-              type='button'
-              data-toggle="collapse"
-              data-target="#education"
-              aria-expanded="false"
-              aria-controler="education"
-            >
-              Education & Training
-            </button>
-          </p>
-          <br>
-          <br>
-          <p>
-            <div class="collapse" id="jobHistory">
-              <div class="card card-block">
-                Job 1
-              </div>
-              <div class="card card-block">
-                Job 2
-              </div>
-              <div class="card card-block">
-                Job 3
-              </div>
-            </div>
-            
-            <div class="collapse" id="education">
-              <div class="card card-block">
-                School 1
-              </div>
-              <div class="card card-block">
-                School 2
-              </div>
-              <div class="card card-block">
-                School 3
-              </div>
-            </div>
-          </p>
+        <p class="lead card-block">
+         <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-send"%>
+        </p>
+      </div>
+        
+      <div class="col-md-9">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF1SURBVEhL7da9K0VxGMDxQ94yyksWg2KzkBWL5C+wqTuJLFZkUFI2JmUwGET8BQaJgbwMNouSJPIyGCSv36fOr36dnnPuoednut/6dOt3O+e5955zzzlRqV9UHr/+S73YwgO+49c11CNY05BhmnOMoxam9eML2lDfAUwPwQ60QZoBmFSJV2hDNIswqQnagDTbMKka79CGaNZh1gm0IZoxmHUFbYhmCiZV4Q3aEM0yzJqDNiTpHl0wLc9xHoF5g8i6el2gBkGagDb0Dq0IVge0wfsIWg+0wWeQsz9IjXiGNliswiy5xfVhCU9wQ04hdyxxG6+JY8h50II/JRsu4Bpup74VSHXwP5DziT0UUIFcDeEFyZ35PtCGeW8tjfw6DcisG3kuj/KNmpH1OOQ7QhlSk3uptmHSISTt77WLTci+HuM1IY9Pqd3A30maSbgu4dblb+U3DPfejCxoyRm8Afm0xbTDNQq3PisLXp1w7wW5jpcqUhT9ACzbC4cvC85bAAAAAElFTkSuQmCC">
+              About Me
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="experiece-tab" data-toggle="tab" href="#experiece" role="tab" aria-controls="experiece" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPTSURBVEhL7VZpS5RRFBb6Ay1/ovVzBjKTRBkEOqNpGkEl1Zf6MmZUkEtl5JaZS2WmgkWBUabOVoZolrmg5TLupGJooSllpenMnO5z576zvL6zhR898MD73nvOc+6595xzb8i6+JLY2KoNaq0xVBVtOKrW6nWA49sYijmhtnai1tbtVGkNFQyzaq2BlIA56ITHmHYIs/+X0MPmzSqNvlytMdhAfuCImS7d6KDSx4P03DDG8YB9X8zooP1xJsciuK6+DLaCJjhhDreptPpRkEUnvqGaVxO0uGTl6Buco6YP0xz45uOLVqoxT3Bdxw7oR9TRtVsFXWDicGqYB0FG/idOPPz5B6Vkd1JEvNljiwGMYQ46f9gCMm5/FM4ZR6DO92lebOGrZYblT4fJarVTwUMLhUcbPZxFHa/ncB+DTlF5P60wG9hiDFxhh/SbBL13QYLAAKu22ez8/NzJgSuZnbS8YuPAt3weeYAFS5HjzAW9sqiiDLuQHDgnbC8ilZMC79u/kST4VtIpLLPwcweXSmOwojKEm9UiRVvLEgnnJd9eCbn3esluJ46cuz2KOrAdYRxIOPyDW7jxFDQANjmLkkGCpLJkkUgSdc10izlLz+2i8+ltdCb5HWUWdnOcvdxCKVmddKfUQpVVI6RLbXXagQNcKDXGPaPYZFSa2j1Qxvks/bXympUI8kv7aHLqF/1cWBYb7Ck2Fvr3+SUeYVZRt9MO2Q4uKU/2Rup3C3cuYWcQj0k0h96BOaexHNjCC9fahUui7OIeCo9RPhLAMjRPJY8GxX9dvHDnEpYASZhEN2pqmfYwluNUUrNwS3yHlHQkgAuc+IYP4c4lwTjWpbUKt0TX86SSUYZfx9JWo/f62mrgZkG3cEt0v3JAUUdCAFvtSC4kgjy55HhWN0ZTX3/z/v268YuiDhCREEBy+SonOXr658jUMMm71vjkgqIOEFA5QVDkMEAkKA2lBnKQRYFejCaiOVHPtzvudMMqPdiOjgXQQCBoa2hvvGWylaLtyQmRxZBj5xr5PyLOK+ldpVdc0c+j1Z50tEy/DwR+8TNDNHg0enm5JF9to7etrqzHbeTeNADpknBlvJ9LAsJfHW7XIrYV5N76tjugg0jhtOzJEB/jXFHVGwW9b3F/CGDV2DJcGmk5XV4fAphDXkBXipRzBPsKgYEUOc78pYk9fRgpykP+9MEY5qpN486nD7teh4N2Kgm2HecjPfZQFqhJNBl0I0D+2EMiwSagV4c/CYs0bkc5MMzwaBSAOSQmdIXZ2gkaALqPWqNPYFHxBz2+Mea1OawLl5CQf0ckaFf5TVBuAAAAAElFTkSuQmCC">
+              Experience
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="education-tab" data-toggle="tab" href="#education" role="tab" aria-controls="education" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVEhL7ZY/T8JgEIf79TQp4qYBPoVxMZgYBxikkjRMOLloFFbqoC7VRAcHBqIQ/3bQGEAHHBjP/t70TQq9Nm2hhChv8iTN3b339LpclcX5H2dv85BmiaMdFdcOLqn/OZwqp9WLYLGeP6LXdo+9PAnPD13RmxVj0iSkEuvxi+q2wyPmiuUbxsWvp6OdQ3EShBIjPgl+PR3tHE6cBLHFvfcf6pR0ukuvCjpaRcS4Wo7Y4vZ+hVq5HA2KRUErmxVyrpYjtvhGXaFBoUDDclkA+W0qzdZyxBKfXVtkLqkesbmsknFlsXfGiSxG47XdczrZ0KiZsT+1LYe0uZ6xYyWRCyOPJJbSnfoHaY2+EGFKgGfEkAsjDy1Go3TeoNRWQ+AWuF9I5lEbJI80sQSNx6eScuTctX54xFjWL/ddtljiNw1iyI3H3WAtYvV6xADL2nr6Zi8Cw3xj4yAoB6m+fSwcrBjUqtP/9ZGTShztqHgWONrF+dNHUX4BxscZ1+0btrwAAAAASUVORK5CYII=">
+              Education
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="reference-tab" data-toggle="tab" href="#reference" role="tab" aria-controls="reference" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMVSURBVEhL5VbbTlNBFOUDNNEnn/Ub/Ap98BuMbz6oCb2jAlESxRBF6Y2WIhUCUSAqEgREWk5PW5CqCAQhUhGwgqgIouVmt7OPs5s5x06kTeBBd7Ky0plZa/Wczuxp0T9TZ6/3HzC5FDf/uLt1uqZ/n9kdOWb1RYMWTzRtckWATxVWZn9kv82lHDzjix0651KOmD2Ro8VO9TjDSUutWm6vi3fZfbEZizeavtz8cjUwMJ/pebsBGJz3k7PFKgo5tq3e6LrDH187HxhaLQsmViqaR5arOybX/KHZTNPQIjx8/Q3CqQwMLEAWqM37yYVQnVk+QG3PzO8nL3YqpxiHuL28KBSRy3QnIC1yZevYKjK3lxeFkrgQkFZkbi8vCiWREQ3RFNj9cQgyzjWPEAOJub28KJRERjjqBrU55FzzCNKKzO3lhYsIohmBgkv2OhhfMb5qfOW55hFiIDG3lxeFkqgQiIHE3F5eFEoiEV3Taai6PwG22pj21JVt4/Bocu2PdWIgMbeXF4WSiNDLGkJJYCg7R7D5YtA59V23lrQic3t5kSGJCO7eZHbciCt3R3VrcczI3F5eZEYiAuvT2XERdl8cGgcXdGtx3MjcXl5kSCICa/rab8suC6hoGYHqziloSSzB0/lt3TqEGEjM7eVFoST6G0LsZgoMzOnGxEBibi8vCiWREaHUT+h684M97SfwPJmBC/XPoLJ9XLdGDCTm9vKiUBKJZgjcxaUNw9qxYncyO076HU1rjczt5UUBJCoEYiAxt5cXhZIoX/TNbu19cPvYVyi7kwBXT1L7vKvB3cl17cJgf/agNDisHbHwB4B7I18KD8Yd3De3pfVobIttr5ZZs1gEX/87bXPhjsY2WvVgAuqVeQjGUnCjY1I765eaXmhfoqBgbBg21pnw7i0JDLLdnNBeJaKc4eLt4WxjKW98DtfYsXI+noYA+xL1yntwdic3r7aOrew0WBHDdXAqGcabJre6YfGoaatXXbF6Y59t3thHFj7rqIuPOnzxMLu52s0e9ZbJGbGYaiInim+GD3P7/7aKin4B4nLtkSUsdpIAAAAASUVORK5CYII=">
+              References
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="ruby" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVEhL7Za9SxxRFMUn2oSApBECKSWVIcXOvDfz3hpUREiqFIEtRTFF6hSBgJUQyH8gpAgI2qUSxVbwT7B0EcnORxYUsUiQBbOb88b74pvZ5zruVxp/cIudveec2bszd8a557/TqlRGY8G2I8GPuq1EsgWyK04s+Sqq1VMJdvajXHpKlrcTBt5sJNil1eyOFUm+S7adiT1vPBY8tpl0W1HAl8jeTstxHmA8OzZxT3XbyEPhfbAIG4nk0/WXbKJI4S/at3ggnH+nmCyxcF00NNoEkn2mlkIkvj9p8WmE0p+jlmtOyuUxBBzmmlVVj2dmHlJbYdTJmj433laRZJtmoy6MbZ5a7oQ6Weir5PGFDmf5OcWf45JvmoFXAr5BLV2hTlr9IHXB0qF2EPTJEvy1o8gAfSMY75q5tdKS7Nj8DF81hVcku0KNxAxWdeOYDNJQwb/ltfnCVP/gRJZJdk16D0u23iYQ7CO1tNFzqCZ9MEi+lRM1Y+G/o5YM2Egr5ijR+8vUkr5zqAYr8xEEexkx9nYSsLfUYiUR/DU21EVGVzRUc+R5jyE8ME1Q9iUA+hKqqQfBExik96Jh9jsM3IBaUvoaqqmJ0jMY1E1TXICnNeG+UN8PJFSjQmB4bpojPMQD5f3AQjXpiwHGbIbkq++hmihgb9TVPdRQDe7VRYRk9vrAQzUI+7fXhxaqUTt86KEKtdfV6xB9vKcAjvMX8ybtc4vDFKEAAAAASUVORK5CYII=">
+              My Gems
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active scrollLeft" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p class="about">Innovative catalyst, with a wide range of functional expertise in Information Technology: programming languages, framework, databases, and platforms.  A quality-focused, technology professional with over five years’ experience in web development with Drupal, and two year experience with Ruby on Rails.  Excels equally working autonomously or as part of a team.  Versatile and flexible with the ability to thrive in high-pressure situations.  Proactively navigates intense workloads.  Demonstrated business acumen and ability to meet fiscal and deadline commitments.</p>
+          </div>
+          <%= render 'experience', collection: @experience %>
+          <%= render 'education'%>
+          <%= render 'reference'%>
+          <div class="tab-pane fade scrollLeft" id="ruby" role="tabpanel" aria-labelledby="ruby-tab">...</div>
         </div>
       </div>
     </div>

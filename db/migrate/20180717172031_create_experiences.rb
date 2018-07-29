@@ -9,7 +9,7 @@ class CreateExperiences < ActiveRecord::Migration[5.0]
       t.integer :start_year
       t.string :end_month
       t.integer :end_year
-      t.integer :phone
+      t.string :phone
       t.text    :thumb_image
       t.references :user, foreign_key: true
       t.timestamps

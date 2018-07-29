@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<%= form_for(@ref) do |f| %>
+  <% if @ref.errors.any? %>
+    <% @ref.errors.full_messages.each do |error| %>
+      <%= alert_generator error%>
+    <%end%>
+  <% end %>
+  
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "user"%></span>
+            <%= f.text_field :name, class: 'form-control', placeholder:"Name", required: true %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "envelope"%></span>
+            <%= f.email_field :email, class: 'form-control' , placeholder:"Email", required: true %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "user-friends"%></i></span>
+             <%= f.collection_select :relationship_id, Relationship.order(:name),:id,:name, include_blank: true %>
+          </div>
+        </div>
+        
+        <div class="form-group col-lg-6 ">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "calendar"%></span>
+            <%= f.text_field :years_known, class: 'form-control', placeholder:"Year Met", required: true %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group nested-fields col-lg-6">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "building"%></span>
+            <%= f.text_field :company, class: 'form-control', placeholder: 'Company' %>
+          </div>
+        </div>
+        
+        <div class="form-group col-lg-6">
+           <%= f.check_box :may_contact, :as => :boolean, :label => false, class: "form-check-input" %>
+           <%= f.label :may_contact, class: "form-check-label" %>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group col-lg-12">
+          <div class="input-group">
+            <span class="input-group-addon"><%= fa_icon "code"%></span>
+            <%= f.text_area :code, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group col-lg-12">
+        <div class="input-group">
+          <span class="input-group-addon"><%= fa_icon "pencil-alt"%></span>
+          <%= f.text_area :comment, class: 'form-control', rows: 13, placeholder:"Enter comments here...", required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.submit 'Submit', class: "btn btn-default btn-send"%>
+  
+<% end %>

@@ -3,6 +3,7 @@
 @import "font-awesome";
 @import "gritter";
 @import "social-share-button";
+@import "perfect-scrollbar";
 
 body {
   font-family: 'Ubuntu', sans-serif;
@@ -958,6 +959,20 @@ h3.single-portfolio-title {
 .post-meta a:focus {
     color: #4a90e2;
 }
-a{
+.remove a{
   color: white;
+}
+.remove{
+  color: white;
+}
+.tab a{
+  color: blue;
+}
+
+.scrollLeft {
+  width: 90%;
+  height: 100px;
+  margin: 50px auto 0 auto;
+  position: relative;
+  overflow: auto;
 }

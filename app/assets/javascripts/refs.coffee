@@ -1,4 +1,3 @@
-$('.scrollLeft').perfectScrollbar();
 ready = undefined
 set_positions = undefined
 
@@ -13,14 +12,14 @@ ready = ->
   $('.sortable').sortable().bind 'sortupdate', (e, ui) ->
     updated_order = []
     set_positions()
-    $('.list-group-item').each (i) ->
+    $('.card').each (i) ->
       updated_order.push
         id: $(this).data('id')
         position: i + 1
       return
     $.ajax
       type: 'PUT'
-      url: '/pages/sort'
+      url: '/refs/sort'
       data: order: updated_order
     return
   return

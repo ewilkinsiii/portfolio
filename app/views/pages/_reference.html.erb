@@ -1,0 +1,29 @@
+<div class="tab-pane fade scrollLeft" id="reference" role="tabpanel" aria-labelledby="reference-tab">
+  <% @references.each do |ref|%>
+   <blockquote class="quote-box">
+      <p class="quotation-mark">
+        “
+      </p>
+      <p class="quote-text">
+        <%= ref.comment %> 
+      </p>
+      <hr>
+      <div class="blog-post-actions">
+        <div class="row">
+          <div class="col-md-1">
+          <p class="blog-post-bottom pull-left">
+            <%= gravatar_helper ref%>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+            <%= "I've known " +  @user.name + " for "%> <%= Time.current.year - ref.years_known%> <%=" years as his " + ref.relationship.name + "." %>
+            Comment posted by <span class="ref-name"><%= ref.name %></span> <%= distance_of_time_in_words(ref.created_at, Time.now) %> ago
+            <span class="badge quote-badge">896</span> <%= fa_icon("heart")%> <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref) if logged_in?(:site_admin) %>
+          </div>
+          </p>
+        </div>
+      </div>
+    </blockquote>
+  <%end%>
+  <%= link_to "Add New Reference", new_ref_path, class: 'btn btn-send' if logged_in?(:site_admin)%>
+</div>
