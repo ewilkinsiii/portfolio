@@ -19,6 +19,7 @@ class User < ApplicationRecord
   has_many :experiences, dependent: :destroy
   has_many :educations, dependent: :destroy
   has_many :refs, dependent: :destroy
+  acts_as_voter
   
   def first_name
     self.name.split.first

@@ -15,10 +15,21 @@
             <%= gravatar_helper ref%>
           </div>
           <div class="col-md-1"></div>
-          <div class="col-md-6">
+          <div class="col-md-8 like" data-score= <%=ref%>>
             <%= "I've known " +  @user.name + " for "%> <%= Time.current.year - ref.years_known%> <%=" years as his " + ref.relationship.name + "." %>
             Comment posted by <span class="ref-name"><%= ref.name %></span> <%= distance_of_time_in_words(ref.created_at, Time.now) %> ago
-            <span class="badge quote-badge">896</span> <%= fa_icon("heart")%> <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref) if logged_in?(:site_admin) %>
+            <h4><span class="badge badge-likes"><%= fa_icon("thumbs-up")%> <span class="badge quote-badge"><%= ref.votes_for.size  %></span></span> 
+              <% if current_user.liked? ref %>
+                <%= link_to fa_icon("heart"), unlike_ref_path(ref.slug), method: :put,
+                  id: "like_#{ref.slug}",
+                  class: "heart"%>
+              <% else %>
+                <%= link_to fa_icon("heart"), like_ref_path(ref.slug), method: :put,
+                  id: "like_#{ref.slug}",
+                  class: "heart-empty" %>
+              <% end %> 
+              <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref), title: 'Edit Reference', 'data-toggle' => 'tooltip', 'data-placement' => 'right' if logged_in?(:site_admin) %>
+            </h4>
           </div>
           </p>
         </div>
@@ -27,3 +38,12 @@
   <%end%>
   <%= link_to "Add New Reference", new_ref_path, class: 'btn btn-send' if logged_in?(:site_admin)%>
 </div>
+<script>
+    $('.like').raty({
+      path: '/assets/',
+      readOnly: true,
+      score:function() {
+        return $(this).attr('data-score');
+      }
+  })
+</script>

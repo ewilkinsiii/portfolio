@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   
   get 'about-me', to: 'pages#about' do
     put :sort, on: :collection
-    
   end
   
   get 'tech-news', to: 'pages#tech_news'
@@ -16,6 +15,8 @@ Rails.application.routes.draw do
   resources :refs do
     member do
       get :toggle_status
+      put :like
+      put :unlike
     end
   end
   

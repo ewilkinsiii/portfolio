@@ -1,6 +1,6 @@
 class RefsController < ApplicationController
-  before_action :set_ref, only: [:show, :edit, :update, :destroy, :toggle_status]
-  access all: [:show], site_admin: :all
+  before_action :set_ref, only: [:show, :edit, :update, :destroy, :toggle_status, :like, :unlike]
+  access all: [:show, :like, :unlike], site_admin: :all
   
   def new
     @ref = Ref.new
@@ -55,6 +55,16 @@ class RefsController < ApplicationController
       @ref.draft!
     end
     redirect_to refs_url, notice: 'Post status has been updated.'
+  end
+  
+  def like
+    @ref.liked_by current_user
+    redirect_to about_me_path + "#reference", notice: "Saved Like" 
+  end
+  
+  def unlike
+    @ref.unliked_by current_user
+    redirect_to about_me_path + "#reference", notice: "Removed Like"
   end
   
   private

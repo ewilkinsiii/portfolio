@@ -9,14 +9,24 @@
     <hr>
     <div class="blog-post-actions">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-2">
         <p class="blog-post-bottom pull-left">
           <%= gravatar_helper @ref%>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
           <%= "I've known " +  @ref.name + " for " + @years.to_s + " years as his " + @ref.relationship.name + "." %>
           Comment posted by <span class="ref-name"><%= @ref.name %></span> <%= distance_of_time_in_words(@ref.created_at, Time.now) %> ago
-          <span class="badge quote-badge">896</span>  ❤
+         <h4><span class="badge badge-likes">Likes <span class="badge quote-badge"><%= @ref.votes_for.size  %></span></span>
+            <% if current_user.liked? @ref %>
+              <%= link_to fa_icon("heart"), unlike_ref_path(@ref.slug), remote: true,
+                id: "like_#{@ref.slug}",
+                class: "heart"%>
+            <% else %>
+              <%= link_to fa_icon("heart"), like_ref_path(@ref.slug), remote: true,
+                id: "like_#{@ref.slug}",
+                class: "heart-empty" %>
+            <% end %> 
+          </h4>
         </div>
         </p>
       </div>

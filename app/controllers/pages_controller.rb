@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
    before_action :set_user, only: [:sort, :about]
+   access all: [:home, :about, :tech_news], site_admin: :all
    
   def home
     @posts = Blog.all
@@ -32,5 +33,4 @@ class PagesController < ApplicationController
     @user = User.find(1)
     @experieces = @user.experiences
   end
-  
 end
