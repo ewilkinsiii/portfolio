@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   end
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   
-  get 'about-me', to: 'pages#about' do
-    put :sort, on: :collection
-  end
-  
+  get 'about-me', to: 'pages#about' 
   get 'tech-news', to: 'pages#tech_news'
   
   resources :refs do

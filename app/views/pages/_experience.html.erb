@@ -16,8 +16,8 @@
         </div>
       </div>
       <div class="card-body">
-        <ul class="list-group list-group-flush <%= "sortable" if logged_in?(:site_admin)%>">
-         <% experiece.experience_desciptions.each do |desciption| %>
+        <ul class="list-group list-group-flush">
+         <% experiece.experience_desciptions.by_position.each do |desciption| %>
            <article class="post" data-id="<%= desciption.id %>">
              <li class="list-group-item"><%= desciption.body%></i>
            </article>

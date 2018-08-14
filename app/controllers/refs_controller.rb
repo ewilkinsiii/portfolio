@@ -84,7 +84,8 @@ class RefsController < ApplicationController
                                 :project,
                                 :code,
                                 :relationship_id,
-                                :user_id
+                                :user_id,
+                                :status
                               )
   end
 end

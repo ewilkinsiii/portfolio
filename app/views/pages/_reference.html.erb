@@ -28,7 +28,8 @@
                   id: "like_#{ref.slug}",
                   class: "heart-empty" %>
               <% end %> 
-              <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref), title: 'Edit Reference', 'data-toggle' => 'tooltip', 'data-placement' => 'right' if logged_in?(:site_admin) %>
+              <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref), title: 'Edit Reference', 'data-toggle' => 'Edit Reference', 'data-placement' => 'right' if logged_in?(:site_admin) %>
+              <% if ref.status ==  'draft'%> <i class="fab fa-firstdraft" style="color: blue;"></i><%end%>
             </h4>
           </div>
           </p>

@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_topic, only: [:index, :search]
   before_action :set_user, only: [:index]
+  before_action :set_links
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
@@ -122,5 +123,9 @@ class BlogsController < ApplicationController
     def set_user
       @admin_user = logged_in?(:site_admin)
       @non_admin = !logged_in?(:site_admin)
+    end
+    
+    def set_links
+      @links = Link.where(category: "social media")
     end
 end

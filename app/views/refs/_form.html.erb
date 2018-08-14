@@ -76,6 +76,9 @@
       </div>
     </div>
   </div>
+  <% if @ref.id != nil%>
+    <%= f.hidden_field :status, :value => 'published' %>
+  <%end%>
   <%= f.submit 'Submit', class: "btn btn-default btn-send"%>
   
 <% end %>

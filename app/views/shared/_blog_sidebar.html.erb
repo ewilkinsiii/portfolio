@@ -18,11 +18,9 @@
   <div class="sidebar">
     <ol class="list-unstyled social-links">
       <li>
-        <a href="https://github.com/ewilkinsiii" target="_blank" ><%= fa_icon "github"%></a>
-        <a href="http://codepen.io/ewilkinsiii/" target="_blank" ><%= fa_icon "codepen"%></a>
-        <a href="https://jsfiddle.net/"target="_blank"><%= fa_icon "jsfiddle"%></a>
-        <a href="https://twitter.com/ewilkinsiii" target="_blank" ><%= fa_icon "twitter"%></a>
-        <a href="https://www.linkedin.com/pub/eugene-wilkins-iii/21/aa5/188"target="_blank"><%= fa_icon "linkedin"%></a>
+        <% @links.each do |link| %>
+          <a href=<%= link.url %> target="_blank" ><%= fa_icon link.name%></a>
+        <%end%>
       </li>
     </ol>
   </div>
