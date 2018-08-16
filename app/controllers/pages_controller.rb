@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @experieces = @user.experiences
+    @experiences = @user.experiences
     @educations = @user.educations
     @references = @user.refs
   end
@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   
   def set_user
     @user = User.find(1)
-    @experieces = @user.experiences
+    @experiences = @user.experiences
   end
   
   def set_skills

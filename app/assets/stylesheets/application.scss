@@ -265,7 +265,8 @@ label {
   padding: 10px;
 }
 .profile-img {
-  border: 1px solid gray;
+  border: 15px solid #3e2b14;
+  padding: 10px;
 }
 .card-block{
   margin-top:5px;
@@ -282,8 +283,7 @@ label {
   text-align: left;
 }
 .skill{
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-left:10px;
 }
 .ref-card > .card {
   margin-top: 15px;
@@ -536,7 +536,6 @@ p.about {
 @media print, screen and (min-width: 40em) {
   .bar-graph .bar-graph-label:before, .bar-graph .bar-graph-label:after {
     content: "";
-    position: absolute;
     border-bottom: 1px dashed #8a8a8a;
     top: 0;
     left: 0;
@@ -568,7 +567,7 @@ p.about {
 
 @media print, screen and (min-width: 40em) {
   .bar-graph .percent {
-    font-size: 3.875rem;
+    font-size: 1.875rem;
   }
 }
 
@@ -611,4 +610,89 @@ p.about {
 .bar-graph .bar.alert {
   border: 1px solid #cc4b37;
   background: linear-gradient(#d67060, #cc4b37 70%);
+}
+
+@media (min-width: 700px) {
+  .chart {
+    background: url("http://cl.ly/QSpc/bg-chart.png") right top repeat-x;
+    height: 425px;
+    margin: 0 auto -32px;
+  }
+  .chart li {
+    display: inline-block;
+    height: 425px;
+    margin: 0 1.8% 0 0;
+    width: 14%;
+  }
+  .chart .axis {
+    display: inline-block;
+  }
+  .chart .percent {
+    font-size: 40px;
+    position: absolute;
+  }
+  .chart .skill {
+    bottom: 20px;
+    font-size: 16px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1000px) {
+  .chart .percent {
+    font-size: 62px;
+  }
+}
+.ten-things ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.ul li, ol.ol li {
+    margin-bottom: 0.7em;
+}
+.text-middle {
+    padding-top: 2em;
+}
+
+.card-flip {
+  perspective: 1000px;
+  &:hover .flip,
+  &.hover .flip {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-flip,
+.front,
+.back {
+  width: 100%;
+  height: 480px;
+}
+
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.text-muted{
+  text-align: center;
+  margin-top: 2em;
 }

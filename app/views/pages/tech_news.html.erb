@@ -1,14 +1,12 @@
-<div class="inner cover">
+<div class="inner cover container-fluid">
     <h1 class="cover-heading">Ruby On Rails Tech-News</h1>
     <div class="row">
       <% @tweets.each do |tweet| %>
-        <div class="col-md-6">
-          <div class="tech-news">
-            <div class="card">
+        <div class="tech-news col-sm d-flex">
+            <div class="card card-body flex-fill">
               <%= twitter_parser tweet %>
             </div>
           </div>
-        </div>
       <%end%>
     </div>
 </div>

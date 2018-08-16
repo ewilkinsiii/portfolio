@@ -5,31 +5,19 @@
     <div class="row">
       <div class="col-md-3">
         <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
-        <div class="skills">
-          <h3 class="skill">Technical Skills</h3>
+        <div class="skills ten-things text-middle">
+          <h3 class="skill">Random Facts</h3>
           <hr>
-          <% @skills.each do |skill|%>
-          <div class="skill">
-            <img src=<%=skill.image%> class="img-skill">
-            <div class="progress">
-              <div 
-                class="progress-bar progress-bar-striped bg-send "
-                role="progressbar"
-                aria-valuenow="<%=skill.percent_utilized%>"
-                aria-valuemax="100"
-                style="width: <%=skill.percent_utilized%>%"
-                data-toggle="tooltip" 
-                data-placement="right" 
-                title="<%= skill.title %>"
-              >
-                <%=skill.percent_utilized%>%
-              </div>
-            </div>
-          </div>
-          <%end%>
+          <ul class="ul skill">
+            <li>I drink a lot of tea</li>
+            <li>I love Marvel Comics & Movies</li>
+            <li>I love to cook (and eat)</li>
+            <li>I'm a bit of a clean freak</li>
+            <li>I want to live on Pandora</li>
+          </ul>
         </div>
         <p class="lead card-block">
-         <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-send"%>
+         <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-send skill"%>
         </p>
       </div>
         
@@ -73,22 +61,7 @@
           <%= render 'experience', collection: @experience %>
           <%= render 'education'%>
           <%= render 'reference'%>
-          <div class="tab-pane fade scrollLeft" id="skill" role="tabpanel" aria-labelledby="skill-tab">
-            <ul class="bar-graph">
-              <li class="bar-graph-axis">
-                <div class="bar-graph-label">Jedi</div>
-                <div class="bar-graph-label">Ninja</div>
-                <div class="bar-graph-label">Geek</div>
-                <div class="bar-graph-label">Newbie</div>
-              </li>
-              <% @skills.each do |skill| %>
-              <li class="bar <%=  skill.badge%>" style="height: <%= skill.percent_utilized%>%;" title=<%= skill.title%>>
-                <div class="percent"><%= skill.percent_utilized%><span>%</span></div>
-                <div class="description"><%= skill.title%></div>
-              </li>
-              <%end%>
-            </ul>
-          </div>
+          <%= render 'skill'%>
         </div>
       </div>
     </div>

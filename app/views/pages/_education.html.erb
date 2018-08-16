@@ -1,27 +1,49 @@
 <div class="tab-pane fade scrollLeft" id="education" role="tabpanel" aria-labelledby="education-tab">
   <p></p>
-  <% @educations.each do |education|%>
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-md-6">
-            <b><%= education.name%></b>, <%=  education.city + ' ' +  education.state  + '.'%> 
-            <br>
-            <%= education.title %>
-          </div>
-          <div class="col-md-6">
-            <%= education.start_month + ' ' + education.start_year.to_s %> - 
-            <%= education.end_month + ' ' + education.end_year.to_s %>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <%= education.description %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  <%end%>
+  <section>
+  	<div class="container">
+  		<div class="row">
+  		  <% @educations.each do |education|%>
+    			<div class="col-md-6">
+            		<!-- Card Flip -->
+    				<div class="card-flip">
+    					<div class="flip">
+    						<div class="front">
+    							<!-- front content -->
+    							<div class="card col-sm d-flex">
+    							  <img class="card-img-top" src=<%= education.thumb_image %> style="height: 180px; width: 100%; display: block;" data-holder-rendered="true">
+    							  <div class="card-block">
+    							    <h4 class="card-title"><%= education.name%></h4>
+    							    <%= education.start_month + ' ' + education.start_year.to_s %> - 
+  										<% if education.end_year.to_s.present? %>
+  										   <%= education.end_month + ' ' + education.end_year.to_s %>
+  										<% else %>
+  										  Present
+  										<%end%>
+    							    <p class="card-text"><%=  education.city + ' ' +  education.state  + '.'%></p>
+    							    <a href="#" class="btn btn-primary">Go somewhere</a>
+    							  </div>
+    							</div>
+    						</div>
+    						<div class="back">
+    							<!-- back content -->
+    							<div class="card col-sm d-flex">
+    							  <h6 class="card-subtitle text-muted"><%= education.name%> Desciption</h6>
+    							  <div class="card-block">
+    							    <hr>
+    							      <p class="card-text"><%= education.description %></p>
+    							    <hr>
+    							    <a href="#" class="card-link">Card link</a>
+    							    <a href="#" class="card-link">Another link</a>
+    							  </div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+            <!-- End Card Flip -->
+    			</div>
+    		<%end%>
+  		</div>
+  	</div>
+  </section>
 </div>
