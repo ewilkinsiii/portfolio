@@ -129,3 +129,21 @@ links_list = [
 links_list.each do |name, category, user_id, url|
   Link.create!(name: name, category: category, user_id: user_id, url: url)
 end
+
+puts "5 Social links were created"
+
+relationships_list = [
+    "Friend",
+    "Colleague",
+    "Client",
+    "Supervisor",
+    "Manager",
+    "Mentor",
+    "Mentoree"
+  ]
+  
+relationships_list.each do |name|
+  Relationship.create!(name: name)
+end
+
+puts "7 relationships were created"

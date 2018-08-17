@@ -11,3 +11,4 @@ Holder.addTheme 'gray',
   fg: 'rgba(255,255,255,.75)'
   font: 'Helvetica'
   fontweight: 'normal'
+  
