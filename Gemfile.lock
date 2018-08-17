@@ -171,7 +171,7 @@ GEM
     orm_adapter (0.5.0)
     perfect-scrollbar-rails (0.6.15)
       railties (>= 3.2, < 6.0)
-    petergate (1.7.5)
+    petergate (1.8.1)
       activerecord (> 4.0.0)
     pg (0.20.0)
     pry (0.10.4)
@@ -322,7 +322,7 @@ DEPENDENCIES
   md_simple_editor (~> 0.3.0)
   mini_magick (~> 4.7)
   perfect-scrollbar-rails
-  petergate (~> 1.7, >= 1.7.3)
+  petergate (~> 1.8)
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.0)
