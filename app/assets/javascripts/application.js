@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
 //= require html.sortable
@@ -22,3 +21,4 @@
 //= require md_simple_editor
 //= require perfect-scrollbar
 //= require_tree .
+//= require bootstrap-sprockets
