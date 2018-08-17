@@ -1,36 +1,57 @@
 class BlogsController < ApplicationController
+  impressionist actions: [:show], unique: [:session_hash]
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_blog_title, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_topic, only: [:index, :search]
+  before_action :set_user, only: [:index]
+  before_action :set_links
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
   
-  # GET /blogs
-  # GET /blogs.json
+  def search
+    if params[:search]
+      @blogs= Blog.page.where('title ILIKE ?', "%" + params[:search] + "%").per(5).latest
+    end 
+  end
+  
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    case
+      when params[:title] && @admin_user
+        @blogs = @topic.blogs.page(params[:page]).per(5).latest
+      when params[:title] && @non_admin
+        @blogs = @topic.blogs.published.page(params[:page]).per(5).latest
+      when params[:tag] && @admin_user
+        @blogs = Blog.page.tagged_with(params[:tag]).per(5).latest
+      when params[:tag] && @non_admin
+       @blogs = Blog.published.page.tagged_with(params[:tag]).per(5).latest
+      when @non_admin
+        @blogs = Blog.published.page(params[:page]).per(5).latest
+      else
+        @blogs = Blog.page(params[:page]).per(5).latest
+    end
     @page_title = "My Portfolio Blog"
   end
-
-  # GET /blogs/1
-  # GET /blogs/1.json
+  
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
-    @seo_keywords = @blog.keywords
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      impressionist(@blog, "message...")
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.keywords
+      @related_post= Blog.where(topic_id: @blog.topic_id).take(3)
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
   end
 
-  # GET /blogs/new
   def new
     @blog = Blog.new
   end
 
-  # GET /blogs/1/edit
   def edit
   end
 
-  # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -43,8 +64,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
@@ -55,8 +74,6 @@ class BlogsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
     @blog.destroy
     respond_to do |format|
@@ -74,17 +91,41 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_blog
       @blog = Blog.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :keywords)
+      params.require(:blog).permit(:title, 
+                                   :body, 
+                                   :keywords, 
+                                   :topic_name,
+                                   :tag_list,
+                                   :image,
+                                   :status
+                                  )
     end
     
     def set_blog_title
       @page_title = @blog.title
+    end
+    
+    def set_topic
+      if logged_in?(:site_admin)
+        @topics= Topic.with_blogs
+      else
+        @topics= Topic.with_blogs_published
+      end
+      @topic= Topic.find_by(:title => params[:title])
+    end
+    
+    def set_user
+      @admin_user = logged_in?(:site_admin)
+      @non_admin = !logged_in?(:site_admin)
+    end
+    
+    def set_links
+      @links = Link.where(category: "social media")
     end
 end

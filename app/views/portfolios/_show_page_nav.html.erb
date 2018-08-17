@@ -1,0 +1,19 @@
+<section class="module-sm module-gray">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col">
+  			  <% unless @portfolio_item.id == @first.id %>
+  			    <%= link_to fa_icon('long-arrow-left'), "/portfolio/#{@portfolio_item.id - 1}", class: "ps-prev"%>
+  			  <%end%>
+  			</div>
+  			<div class="col">
+  				<div class="ps-all"><%= link_to "All Works", portfolios_path, class: "h4" %></div>
+  			</div>
+  			<div class="col">
+  			  <% unless @portfolio_item.id == @last.id %>
+  			    <%= link_to fa_icon('long-arrow-right'), "/portfolio/#{@portfolio_item.id + 1 unless @portfolio_item.id.nil?}", class: "ps-next"%>
+  			  <%end%>
+  			</div>
+  		</div>
+  	</div>
+  </section>

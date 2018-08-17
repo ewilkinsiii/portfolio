@@ -15,6 +15,12 @@ class User < ApplicationRecord
   validates_presence_of :name
   
   has_many :comments, dependent: :destroy
+  has_many :addresses, dependent: :destroy
+  has_many :experiences, dependent: :destroy
+  has_many :educations, dependent: :destroy
+  has_many :refs, dependent: :destroy
+  has_many :links, dependent: :destroy
+  acts_as_voter
   
   def first_name
     self.name.split.first

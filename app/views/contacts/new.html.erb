@@ -1,33 +1,112 @@
-<h1>Contact</h1>
-<div>
- <%= form_for  @contact do |f| %>
-   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class:"form-control", required: true %>
-   </div>
-   
-   <br>
-   
-   <div class="form-group">
-     <%= f.label :email %><br>
-     <%= f.email_field :email, class:"form-control", required: true %>
-   </div>
-   
-   <br>
-   <div class="form-group">
-     <%= f.label :message %><br>
-     <%= f.text_area :message, as: :text, class:"form-control", rows:"8"%>
-   </div>
-   
-   <br>
-   <div class="hidden">
-     <%= f.label :nickname %><br>
-     <%= f.text_field :nickname, hint: 'leave this field blank', class:"form-control"  %>
-   </div>
-   
-   <br>
-   
-   <%= f.submit 'Send Message', class: "btn btn-primary"%>
-   
-  <%end%>
+<div class="app-card-container">
+  <div class="card">
+    <h1 class="header-title">Contact</h1>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6">
+        <iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.665997063233!2d-87.75651768415666!3d41.943027979217085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcc5dcd7e9243%3A0x990171e9371cef25!2s5061+W+Newport+Ave%2C+Chicago%2C+IL+60641!5e0!3m2!1sen!2sus!4v1492570746074" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-6">
+        <%= form_for  @contact do |f| %>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><%= fa_icon "user"%>
+              </span>
+              <%= f.text_field :name, class:"form-control", id:"name", name:"nm", placeholder:"Name",required: true %>
+            </div>
+          </div>
+           
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><%= fa_icon "envelope"%>
+              </span>
+              <%= f.email_field :email, class:"form-control", id:"email", name:"em", placeholder:"Email", required: true%>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><%= fa_icon "phone"%>
+              </span>
+    		      <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
+  		      </div>
+  		    </div>
+           
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><%= fa_icon "pencil"%>
+              </span>
+              <%= f.text_area :message, as: :text, class:"form-control", rows:"5", id:"comment", name:"FB", placeholder:"Type Your Message/Feedback here...", required: true%>
+            </div>
+          </div>
+           
+          <div class="hidden">
+            <%= f.label :nickname %><br>
+            <%= f.text_field :nickname, hint: 'leave this field blank', class:"form-control"  %>
+          </div>
+  
+          <%= f.submit 'Send', class: "btn btn-default btn-send"%>
+         
+        <%end%>
+      </div>
+      
+      <div class="container second-portion">
+      	<div class="row">
+          <!-- Boxes de Acoes -->
+        	<div class="col-xs-12 col-sm-6 col-lg-4">
+      			<div class="box">							
+      				<div class="icon">
+      					<div class="image"><%= fa_icon "envelope"%></div>
+      					<div class="info">
+      						<h3 class="title">MAIL & WEBSITE</h3>
+      						<p>
+      							<%= fa_icon "envelope"%> &nbsp me@ewilkinsiii.pro
+      							<br>
+      							<br>
+      							<%= fa_icon "globe"%> &nbsp www.ewilkinsiii.pro
+      						</p>
+      					</div>
+      				</div>
+      				<div class="space"></div>
+      			</div> 
+    		</div>
+			
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      			<div class="box">							
+      				<div class="icon">
+      					<div class="image"><%= fa_icon "mobile"%></i></div>
+      					<div class="info">
+      						<h3 class="title">CONTACT</h3>
+          				<p>
+      							<%= fa_icon "mobile"%> &nbsp <%= number_to_phone  @address.phone %>
+      						  <br>
+      							<br>
+      						  <%= fa_icon "skype"%> &nbsp 
+      						</p>
+      					</div>
+      				</div>
+      				<div class="space"></div>
+      			</div> 
+      		</div>
+      			
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+      			<div class="box">							
+      				<div class="icon">
+      					<div class="image"><%= fa_icon "map-marker"%></div>
+      					<div class="info">
+      						<h3 class="title">ADDRESS</h3>
+          					<p>
+      							 <%= fa_icon "map-marker"%> &nbsp <%= @address.street + ' ' + @address.city + ', ' +  @address.state + '. ' + @address.zipcode.to_s%>
+      						</p>
+      					</div>
+      				</div>
+      				<div class="space"></div>
+      			</div> 
+      		</div>	
+      	</div>
+      </div>
+    </div>
+  </div>
 </div>
+
+		

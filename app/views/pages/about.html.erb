@@ -1,18 +1,82 @@
-<div class="inner cover">
-    <h1>A little bit about myself</h1>
-    
+<div class="app-card-container">
+  <div class="card">
+    <h1 class="header-title">A Little Bit About Myself</h1>
     <hr>
-    
     <div class="row">
-        <div class="col-md-4">
-            <%= image_tag "profile.jpg", width:250, alt: "Profile Image"%>
+      <div class="col-md-3">
+        <%= image_tag "profile.jpg", width:250, alt: "Profile Image", class: 'profile-img'%>
+        <div class="skills ten-things text-middle">
+          <h3 class="skill">Random Facts</h3>
+          <hr>
+          <ul class="ul skill">
+            <li>I drink a lot of tea</li>
+            <li>I love Marvel Comics & Movies</li>
+            <li>I love to cook (and eat)</li>
+            <li>I'm a bit of a clean freak</li>
+            <li>I want to live on Pandora</li>
+          </ul>
         </div>
+        <p class="lead card-block">
+         <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-send skill"%>
+        </p>
+      </div>
         
-        <div class="col-md-8">
-            <p>Innovative catalyst, with a wide range of functional expertise in Information Technology: programming languages, framework, databases, and platforms.  A quality-focused, technology professional with over five years’ experience in web development with Drupal, and two year experience with Ruby on Rails.  Excels equally working autonomously or as part of a team.  Versatile and flexible with the ability to thrive in high-pressure situations.  Proactively navigates intense workloads.  Demonstrated business acumen and ability to meet fiscal and deadline commitments.  </p>
-            <p class="lead">
-               <%= link_to "Hire Me", new_contact_path, class: "btn btn-lg btn-secondary"%>
-            </p>
+      <div class="col-md-9">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF1SURBVEhL7da9K0VxGMDxQ94yyksWg2KzkBWL5C+wqTuJLFZkUFI2JmUwGET8BQaJgbwMNouSJPIyGCSv36fOr36dnnPuoednut/6dOt3O+e5955zzzlRqV9UHr/+S73YwgO+49c11CNY05BhmnOMoxam9eML2lDfAUwPwQ60QZoBmFSJV2hDNIswqQnagDTbMKka79CGaNZh1gm0IZoxmHUFbYhmCiZV4Q3aEM0yzJqDNiTpHl0wLc9xHoF5g8i6el2gBkGagDb0Dq0IVge0wfsIWg+0wWeQsz9IjXiGNliswiy5xfVhCU9wQ04hdyxxG6+JY8h50II/JRsu4Bpup74VSHXwP5DziT0UUIFcDeEFyZ35PtCGeW8tjfw6DcisG3kuj/KNmpH1OOQ7QhlSk3uptmHSISTt77WLTci+HuM1IY9Pqd3A30maSbgu4dblb+U3DPfejCxoyRm8Afm0xbTDNQq3PisLXp1w7wW5jpcqUhT9ACzbC4cvC85bAAAAAElFTkSuQmCC">
+              About Me
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="experiece-tab" data-toggle="tab" href="#experiece" role="tab" aria-controls="experiece" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhL7ZUxDoIwFEAbjYmjJ+ASGheVLh4AVI4g1+ASrg6ujkpdMOECJi44ewRnF5EvJcbyCXVop/+SN5Bf+hIogRGEfaKow/14y32Rq06CgyNX1TlnOWqSTeUKDRri5sMFs9Vx7HriaTXMl2Lk+uJRBmM7YSX6chensHrsxsJqlHti/RnId24k3BitKOLD8NKTV3WwKNga9uJNY1QHLAq2hYNg3y3iOzSa3vssuc1RYQZgUVD3cKEkmYNuCsIMwGYghf/CWDi9DtCDAwLGwjDEbgLLOYW/UliVwj+0fcc6PwlsBsLehH0YewNWxnCN9T6SUAAAAABJRU5ErkJggg==">
+              Experience
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="education-tab" data-toggle="tab" href="#education" role="tab" aria-controls="education" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKHSURBVEhL7VZNTxNRFB1NXLnUlQv9AbpzqX9AQ0T3upDQ6QcoDSrOdIrFlhAFOp1pSyvYWCvQD0oKJobQSKyNQTeYEHVr3GvYNFpCgrm+M3mEQqfFpti46ElO3su995wzffOSqdBGG9WgI92S1mEf1NdB7FHjzcOHKE4es0jqDZuif7s1FC2NxF4RiD1q6GGGjzeP63fGjotSwGlz6T+cw09Lo8+XKZr7sIeooYcZzELD5Y2jRwqdsMnasFXRS3cfxX/6Z15XBe4nZjALDbTw4HYHQ7yvnbYpwajVpZfl8emyliqYhtQjNNDCA17w5PbVmHJcm2VDWfa0ZUVLbQUzRVPTRggPeMET3t0D6lkeJwhWWb3Aim8SjsvkCc9vh7Pv9oj1dJG80QVyqbPUPxKj20MRcgyGyKpoBrFHDT1XIEkPozlDU+kBT3jbleAvZCETR3vR7tYLZsGSf4bd2gj5JuYonMxT/OUqpfMfKbuyTgtvPxvEPp1fM3qYwSw0LqY1C0YWMvnvFgQE293B+cqjFuUA5QqfaLH4pSFCA23lUcObXbhzPG4XCMbapYydsbn1J7gYEJsZ/w2hNS4X84KnEWKGneAdiP3jJ5sNhge3q439wUCzwdymPmoFp5bXSEsskXciQwOPn5HTG6WeB7u3GnvU0PNF5ijwYsnQNB3cDLlNfZgGS2rcIgV+m5nWp7rNPhoxblMfZsFA173QKYuk9bKHmLLI6nuLHPjKPgQbjFucG6ihZ8ywWWi4/GDUCv6nSPVdVad7Oyjp7PTzUmvAQje/L44SVl5qDZJ9V1ZXfDcJKy+1Buz9duIdY+Wl1sDj8RxN2C9lsPJS6zApnj+8P2pt/D8QhD++LVEp37vD+QAAAABJRU5ErkJggg==">
+              Education
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="reference-tab" data-toggle="tab" href="#reference" role="tab" aria-controls="reference" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMVSURBVEhL5VbbTlNBFOUDNNEnn/Ub/Ap98BuMbz6oCb2jAlESxRBF6Y2WIhUCUSAqEgREWk5PW5CqCAQhUhGwgqgIouVmt7OPs5s5x06kTeBBd7Ky0plZa/Wczuxp0T9TZ6/3HzC5FDf/uLt1uqZ/n9kdOWb1RYMWTzRtckWATxVWZn9kv82lHDzjix0651KOmD2Ro8VO9TjDSUutWm6vi3fZfbEZizeavtz8cjUwMJ/pebsBGJz3k7PFKgo5tq3e6LrDH187HxhaLQsmViqaR5arOybX/KHZTNPQIjx8/Q3CqQwMLEAWqM37yYVQnVk+QG3PzO8nL3YqpxiHuL28KBSRy3QnIC1yZevYKjK3lxeFkrgQkFZkbi8vCiWREQ3RFNj9cQgyzjWPEAOJub28KJRERjjqBrU55FzzCNKKzO3lhYsIohmBgkv2OhhfMb5qfOW55hFiIDG3lxeFkqgQiIHE3F5eFEoiEV3Taai6PwG22pj21JVt4/Bocu2PdWIgMbeXF4WSiNDLGkJJYCg7R7D5YtA59V23lrQic3t5kSGJCO7eZHbciCt3R3VrcczI3F5eZEYiAuvT2XERdl8cGgcXdGtx3MjcXl5kSCICa/rab8suC6hoGYHqziloSSzB0/lt3TqEGEjM7eVFoST6G0LsZgoMzOnGxEBibi8vCiWREaHUT+h684M97SfwPJmBC/XPoLJ9XLdGDCTm9vKiUBKJZgjcxaUNw9qxYncyO076HU1rjczt5UUBJCoEYiAxt5cXhZIoX/TNbu19cPvYVyi7kwBXT1L7vKvB3cl17cJgf/agNDisHbHwB4B7I18KD8Yd3De3pfVobIttr5ZZs1gEX/87bXPhjsY2WvVgAuqVeQjGUnCjY1I765eaXmhfoqBgbBg21pnw7i0JDLLdnNBeJaKc4eLt4WxjKW98DtfYsXI+noYA+xL1yntwdic3r7aOrew0WBHDdXAqGcabJre6YfGoaatXXbF6Y59t3thHFj7rqIuPOnzxMLu52s0e9ZbJGbGYaiInim+GD3P7/7aKin4B4nLtkSUsdpIAAAAASUVORK5CYII=">
+              References
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" id="skill-tab" data-toggle="tab" href="#skill" role="tab" aria-controls="skill" aria-selected="false">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK5SURBVEhL3ddXyE5xAMfxY+8tcoELK5kZIZsLF7iQSClCKUWKJIpkuzGTjCSlSJIykp11YxQiI6KMENkr4/s95zl5euZ53ve94Vef3v//9PT8z38/b/AvpXLqb2Y6o2dKdR9URNpiLW7gPWogPZXwEb9T+qFcsYEN+IEjmI42MIsxNioGrWGDTXEdfs50xA7UDWsJUxuXcAfdfZCWlXiHL9iFQ3gJsxu3sAyf8ALnkbjxPXBoG4S1v2kOh3UhOuEKdqIPTEssxwNMgC/taIxD0QzGV7QLa9lxKN/ARgqlCs7iYFhLEIduc1TMGVftB4wPa0HQCBtxFQfgCjct4PoYEtaKpD78sNsiM6OxHhfxHNVgr1wLzuNUbIMrvxXMPtzFdsz1Qb6Mwiu4RTJzGNewAP19QHrDRVQvrEU5gUVRMdwFs7AfznXe+KVHo2JWbFgOncNrLDvf9jyOvVwdFYOa6IWlKNiwja6LilmZg8twft0ypg6eYBPaYwrcZn1hfP4dfn6vD3JlOAqt5jiN4ZcPDWtB0A1uK3vk3E+Ecb28hdOXN1VxE6vCWuH4gvYi7lUcD5302PAjrAlreTITvm36IsmVJngKTya/2FU+DXGjXiIj4InmkTkAv+DLZsXj7DUmh7XCqYXjuI2H8HSzV/dhnFOP09P4nPrri3ZAVpxT52dQWCsee3cMTouHiUenvXKhuZ9nw3hMOn0uurxZgW84hcxLoVg8SJxzDxYX3TDEyXUeZMWz9xw8ZUrNDMxPaYiB8LJInHk4ExXLHIf/HpaEtYQZg8dRscyZhGfw1EqcrviJ8vxuOgmPyJLi1nKFxldbqXGhuY3iS6SkuCX8rVWWeAe7NZuFtRLTA96pF7A1TRcUiyNlw5k/mRLHN3drbIGNeiONRLH4cuVqODOu9H+i4Qr7b+J/SBD8AWSIlb9RupmmAAAAAElFTkSuQmCC">
+              Skills
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active scrollLeft" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p class="about"> <%= @user.bio %></p>
+          </div>
+          <%= render 'experience', collection: @experience %>
+          <%= render 'education'%>
+          <%= render 'reference'%>
+          <%= render 'skill'%>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+<script>
+var url = document.location.toString();
+if (url.match('#')) {
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+} 
+
+// Change hash for page-reload
+$('.nav-tabs a').on('shown.bs.tab', function (e) {
+    window.location.hash = e.target.hash;
+})
+</script>

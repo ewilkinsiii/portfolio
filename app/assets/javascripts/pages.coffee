@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$('.scrollLeft').perfectScrollbar();
+document.querySelector('.card-flip').classList.toggle 'flip'
+
+### 
+# Holder.js for demo image
+# Just for demo purpose
+###
+
+Holder.addTheme 'gray',
+  bg: '#777'
+  fg: 'rgba(255,255,255,.75)'
+  font: 'Helvetica'
+  fontweight: 'normal'
+  

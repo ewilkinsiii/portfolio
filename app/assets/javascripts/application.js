@@ -18,5 +18,7 @@
 //= require cocoon
 //= require gritter
 //= require cable
-//= require turbolinks
+//= require social-share-button
+//= require md_simple_editor
+//= require perfect-scrollbar
 //= require_tree .

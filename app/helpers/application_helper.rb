@@ -10,10 +10,10 @@ module ApplicationHelper
     end
   end
   
-  def source_helper(layout_name)
+  def source_helper(styles)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
-      content_tag(:p, greeting, class: "source-greeting")
+      greeting = "Thanks for visiting me from #{session[:source]}, please feel free to #{link_to 'contact me', new_contact_path} if you would like to work together."
+      content_tag(:div, greeting.html_safe, class: styles)
     end
   end
   
@@ -32,7 +32,7 @@ module ApplicationHelper
         title: 'About Me'
       },
       {
-        url: contact_path,
+        url: new_contact_path,
         title: 'Contact'
       },
       {
@@ -74,4 +74,28 @@ module ApplicationHelper
   def alert_generator msg
     js add_gritter(msg, title: "Eugene Wilkins III Portfolio", sticky: false)
   end
+  class HTMLwithPygments < Redcarpet::Render::HTML
+    def block_code(code, language)
+      Pygments.highlight(code, lexer: language)
+    end
+  end
+  
+  def markdown(content)
+    renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
+    options = {
+      autolink: true,
+      no_intra_emphasis: true,
+      disable_indented_code_blocks: true,
+      fenced_code_blocks: true,
+      lax_html_blocks: true,
+      strikethrough: true,
+      superscript: true
+    }
+    Redcarpet::Markdown.new(renderer, options).render(content).html_safe
+  end
+  
+  def gravatar_helper ref
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(ref.email)}",class: "img-circle", width: 60
+  end
+  
 end

@@ -1,0 +1,40 @@
+ <nav class="breadcrumb">
+  <%= link_to "Home", root_path, class: "breadcrumb-item" %> |
+  <%= link_to "Blogs", blogs_path %> |
+  <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%> |
+  <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' | ')) %>
+  <span class="pull-right">
+   <%= link_to fa_icon("pencil-square-o"), edit_blog_path(@blog) if logged_in?(:site_admin) %>
+   <%= link_to fa_icon("trash"), @blog, method: :delete, data: {confirm: "Are you sure you want ro delete this post"} if logged_in?(:site_admin) %>
+  </span>
+</nav>
+ 
+ <% unless @blog.image?%>
+     <h2><%= @blog.title %></h2>
+     <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
+     <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
+     <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
+     <p><%= markdown @blog.body %></p>
+     <p><%= social_share_button_tag("Eugene Wilkins III's Portfolio") %></p>
+ <%else%>
+    <h2><%= @blog.title %></h2>
+    <div class="container">
+     <div class="row">
+      <div class="col-md-5">
+       <%= image_tag @blog.image, width: '100%' unless @blog.image.nil? %>
+      </div>
+      
+      <div class="col-md-5">
+       <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
+       <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
+       <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
+       
+      </div>
+      <div class="col-md-2">
+      </div>
+     </div>
+    </div>
+    <%= "<p></p><hr>".html_safe unless @blog.image.nil?%>
+    <p><%= markdown @blog.body %> <%= social_share_button_tag("Eugene Wilkins III's Portfolio") %></p>
+ <%end%>
+ 

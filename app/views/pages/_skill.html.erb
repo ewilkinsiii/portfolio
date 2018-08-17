@@ -1,0 +1,16 @@
+<div class="tab-pane fade scrollLeft" id="skill" role="tabpanel" aria-labelledby="skill-tab">
+  <ul class="bar-graph">
+    <li class="bar-graph-axis">
+      <div class="bar-graph-label">Jedi</div>
+      <div class="bar-graph-label">Ninja</div>
+      <div class="bar-graph-label">Geek</div>
+      <div class="bar-graph-label">Newbie</div>
+    </li>
+    <% @skills.each do |skill| %>
+    <li class="bar <%=  skill.badge%>" style="height: <%= skill.percent_utilized%>%;" title=<%= skill.title%>>
+      <div class="percent"><%= skill.percent_utilized%><span>%</span></div>
+      <div class="description"><%= skill.title%></div>
+    </li>
+    <%end%>
+  </ul>
+</div>
