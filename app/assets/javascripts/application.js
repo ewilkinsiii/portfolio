@@ -20,5 +20,5 @@
 //= require social-share-button
 //= require md_simple_editor
 //= require perfect-scrollbar
-//= require_tree .
 //= require bootstrap-sprockets
+//= require_tree .
