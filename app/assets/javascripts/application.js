@@ -19,7 +19,8 @@
 //= require cable
 //= require social-share-button
 //= require md_simple_editor
-//= require_tree .
 //= require lib/typed
 //= require typed-implementation
+//= require turbolinks
+//= require_tree .
 //= require bootstrap-sprockets
