@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require jquery-ui
 //= require html.sortable
 //= require cocoon
@@ -24,3 +23,4 @@
 //= require md_simple_editor
 //= require perfect-scrollbar
 //= require_tree .
+//= require bootstrap-sprockets
