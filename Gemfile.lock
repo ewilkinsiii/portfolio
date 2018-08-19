@@ -46,6 +46,7 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (7.1.1)
       execjs
+    awesome_print (1.8.0)
     aws-sdk (2.9.23)
       aws-sdk-resources (= 2.9.23)
     aws-sdk-core (2.9.23)
@@ -55,7 +56,13 @@ GEM
       aws-sdk-core (= 2.9.23)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
@@ -84,6 +91,7 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     darkstarud_view_tool (0.1.0)
+    debug_inspector (0.0.3)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -97,6 +105,7 @@ GEM
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
     equalizer (0.0.11)
+    erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.11.0)
@@ -300,6 +309,9 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 4.0)
   acts_as_votable (~> 0.11.1)
+  awesome_print
+  better_errors (~> 2.4)
+  binding_of_caller (~> 0.8.0)
   bootstrap (~> 4.0.0.alpha6)
   byebug
   carrierwave (~> 1.0)
