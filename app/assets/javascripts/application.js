@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
 //= require html.sortable
@@ -20,7 +19,7 @@
 //= require cable
 //= require social-share-button
 //= require md_simple_editor
-//= require turbolinks
 //= require_tree .
 //= require lib/typed
 //= require typed-implementation
+//= require bootstrap-sprockets
