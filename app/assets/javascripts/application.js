@@ -18,9 +18,9 @@
 //= require gritter
 //= require lib/typed
 //= require typed-implementation
-//= require cable
-//= require_tree .
-//= require bootstrap-sprockets
 //= require social-share-button
 //= require md_simple_editor
 //= require perfect-scrollbar
+//= require cable
+//= require_tree .
+//= require bootstrap-sprockets
