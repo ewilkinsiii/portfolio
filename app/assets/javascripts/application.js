@@ -21,5 +21,5 @@
 //= require md_simple_editor
 //= require turbolinks
 //= require lib/typed
-//= require typed-implementation
 //= require_tree .
+//= require typed-implementation
