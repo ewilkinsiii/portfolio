@@ -20,6 +20,6 @@
 //= require social-share-button
 //= require md_simple_editor
 //= require turbolinks
-//= require lib/typed
 //= require_tree .
+//= require lib/typed
 //= require typed-implementation
