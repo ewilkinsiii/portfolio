@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery-ui
 //= require html.sortable
 //= require cocoon
 //= require gritter
+//= require lib/typed
+//= require typed-implementation
 //= require cable
 //= require social-share-button
 //= require md_simple_editor
 //= require perfect-scrollbar
-//= require bootstrap-sprockets
 //= require_tree .
