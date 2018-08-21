@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :set_user, only: [:new, :create]
+  
   def new
-    @user = User.find(1)
-    @address = @user.addresses[0]
     @contact = Contact.new
   end
 
@@ -14,5 +14,12 @@ class ContactsController < ApplicationController
       flash.now[:error] = 'Cannot send message.'
       render :new
     end
+  end
+  
+  private
+  
+  def set_user
+    @user = User.find(1)
+    @address = @user.addresses[0]
   end
 end

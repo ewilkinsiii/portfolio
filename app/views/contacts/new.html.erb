@@ -28,7 +28,7 @@
             <div class="input-group">
               <span class="input-group-addon"><%= fa_icon "phone"%>
               </span>
-    		      <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
+    		      <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No.">
   		      </div>
   		    </div>
            
@@ -60,7 +60,7 @@
       					<div class="info">
       						<h3 class="title">MAIL & WEBSITE</h3>
       						<p>
-      							<%= fa_icon "envelope"%> &nbsp me@ewilkinsiii.pro
+      							<%= fa_icon "envelope"%> &nbsp admin@ewilkinsiii.pro
       							<br>
       							<br>
       							<%= fa_icon "globe"%> &nbsp www.ewilkinsiii.pro
@@ -78,7 +78,7 @@
       					<div class="info">
       						<h3 class="title">CONTACT</h3>
           				<p>
-      							<%= fa_icon "mobile"%> &nbsp <%= number_to_phone  @address.phone %>
+      							<%= fa_icon "mobile"%> &nbsp <%= number_to_phone(@address.phone) %>
       						  <br>
       							<br>
       						  <%= fa_icon "skype"%> &nbsp 
