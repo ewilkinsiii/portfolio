@@ -12,7 +12,7 @@
             <div class="input-group">
               <span class="input-group-addon"><%= fa_icon "user"%>
               </span>
-              <%= f.text_field :name, class:"form-control", id:"name", name:"nm", placeholder:"Name",required: true %>
+              <%= f.text_field :name, class:"form-control", id:"name", placeholder:"Name",required: true %>
             </div>
           </div>
            
@@ -20,7 +20,7 @@
             <div class="input-group">
               <span class="input-group-addon"><%= fa_icon "envelope"%>
               </span>
-              <%= f.email_field :email, class:"form-control", id:"email", name:"em", placeholder:"Email", required: true%>
+              <%= f.email_field :email, class:"form-control", id:"email", placeholder:"Email", required: true%>
             </div>
           </div>
           
@@ -28,7 +28,7 @@
             <div class="input-group">
               <span class="input-group-addon"><%= fa_icon "phone"%>
               </span>
-    		      <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No.">
+    		       <%= f.number_field :phone, class:"form-control", id:"phone", placeholder:"Mobile Number", required: true%>
   		      </div>
   		    </div>
            
@@ -36,7 +36,7 @@
             <div class="input-group">
               <span class="input-group-addon"><%= fa_icon "pencil"%>
               </span>
-              <%= f.text_area :message, as: :text, class:"form-control", rows:"5", id:"comment", name:"FB", placeholder:"Type Your Message/Feedback here...", required: true%>
+              <%= f.text_area :message, as: :text, class:"form-control", rows:"5", id:"comment", placeholder:"Type Your Message/Feedback here...", required: true%>
             </div>
           </div>
            
