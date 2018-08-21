@@ -87,13 +87,13 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ['https://eugenes-portfolio.herokuapp.com', 'http://www.ewilkinsiii.pro']
   config.action_cable.url = "wss://eugenes-portfolio.herokuapp.com/cable"
   
-  config.action_mailer.default_url_options = {host: 'http://www.ewilkinsiii.pro'}
+  config.action_mailer.default_url_options = {host: 'https://eugenes-portfolio.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'ewilkinsiii.pro',
+    :domain => 'herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
