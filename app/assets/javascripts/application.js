@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require html.sortable
 //= require cocoon
 //= require gritter
 //= require cable
@@ -20,4 +21,3 @@
 //= require md_simple_editor
 //= require bootstrap
 //= require_tree .
-//= require html.sortable
