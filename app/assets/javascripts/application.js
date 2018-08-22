@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require jquery-ui
 //= require html.sortable
 //= require cocoon
@@ -20,4 +19,6 @@
 //= require cable
 //= require social-share-button
 //= require md_simple_editor
+//= require turbolinks
 //= require_tree .
+//= require bootstrap
