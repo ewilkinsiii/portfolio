@@ -19,5 +19,5 @@
 //= require social-share-button
 //= require md_simple_editor
 //= require bootstrap
-//= require html.sortable
 //= require_tree .
+//= require html.sortable
