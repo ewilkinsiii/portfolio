@@ -12,7 +12,7 @@ ready = ->
   $('.sortable').sortable().bind 'sortupdate', (e, ui) ->
     updated_order = []
     set_positions()
-    $('.card').each (i) ->
+    $('.post').each (i) ->
       updated_order.push
         id: $(this).data('id')
         position: i + 1
