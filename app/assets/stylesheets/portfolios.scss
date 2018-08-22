@@ -976,3 +976,13 @@ h3.single-portfolio-title {
   position: relative;
   overflow: auto;
 }
+
+.em, .em-svg {
+    height: 1em;
+    width: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
