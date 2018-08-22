@@ -22,7 +22,7 @@
   </div>
       
   <div class="form-group">
-    <%= f.text_field :tag_list, class: 'form-control', placeholder: 'Tags (separated by commas)' %>
+    <%= f.text_field :tag_list, value: blog.tag_list.to_s, class: 'form-control', placeholder: 'Tags (separated by commas)' %>
   </div>
   
   <div class="form-group">
