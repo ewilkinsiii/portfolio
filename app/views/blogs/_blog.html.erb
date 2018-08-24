@@ -15,7 +15,8 @@
   
   <div class="blog-header">
     <% if blog.image.present?%>
-    <div class="blog-cover" style='background: url(<%= blog.image%>);'>
+    <div class="blog-cover" style='background: url(<%= blog.image%>); background-repeat: no-repeat;
+    background-size: 100% 100%;'>
     <%end%>
       <div class"blog-author">
        <h3><%= blog_gravatar_helper @user %><%= @user.name%></h3>
