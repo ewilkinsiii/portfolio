@@ -31,4 +31,9 @@ class Blog < ApplicationRecord
       @status = all
     end
   end
+  
+  def user_email(blog_user_id)
+    @user = User.where(id: :blog_user_id )
+    return @user.email
+  end
 end

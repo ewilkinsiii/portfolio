@@ -742,6 +742,8 @@ h3.single-portfolio-title {
     background: #1b1d1f;
     color: #bfbfbf;
     padding: 60px 0 0;
+    position: fixed;
+    width: 100%;
 }
 
 .footer a {
@@ -784,6 +786,7 @@ h3.single-portfolio-title {
 
 
 /* Custom Styles */
+
 
 .portfolio-container {
   padding-top: 30px;
@@ -985,4 +988,8 @@ h3.single-portfolio-title {
     background-size: contain;
     display: inline-block;
     vertical-align: middle;
+}
+
+.text-center{
+  margin-top: -2em;  
 }
