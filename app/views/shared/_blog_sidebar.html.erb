@@ -54,7 +54,7 @@
 			<ul>
 			  <% most_viewed_helper.each do |b| %>
 				  <li class="clearfix">
-  					<div class="wi"><%= image_tag "1.jpg"%></div>
+  					<div class="wi"><%= image_tag b.image unless b.image.nil?%><%= image_tag "1.jpg" unless b.image.present?%></div>
   					<div class="wb">
               <%= link_to "#{b.title}", blog_path(b)%>
               <span class="post-date"><%=b.created_at.strftime('%b %d, %Y')%></span>

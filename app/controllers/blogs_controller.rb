@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
   end
   
   def index
+    @user = User.first
     case
       when params[:title] && @admin_user
         @blogs = @topic.blogs.page(params[:page]).per(5).latest
