@@ -28,7 +28,7 @@
      
      <div class="row"> 
       <div class="col-md-10">
-       <h4><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
+       <h4 class="category"><%= fa_icon "th-list"%> <%=link_to "#{@blog.topic_name}", blogs_path(:title => "#{@blog.topic.title}")%></h4>
        <div class="post-tags"><%= fa_icon "tags"%> <%= raw(@blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')) %></div>
        <p class="blog-post-meta"><%= "#{@blog.impressionist_count} views so far!" %></p>
        
