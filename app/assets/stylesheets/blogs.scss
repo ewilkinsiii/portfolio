@@ -645,6 +645,7 @@ ul.ui-autocomplete {
   text-transform: uppercase;
   position: relative;
   white-space: nowrap;
+  margin-top: .5em;
   & a {
     color: lighten(#333, 40%);
   }
