@@ -9,7 +9,7 @@
 			  </ol>
 			  <div class="carousel-inner portfolioimg" role="listbox">
 					<div class="carousel-item active">
-				   	<%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%', class: "d-block img-fluid" %>
+				   	<%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '635px', height: '400px', class: "d-block img-fluid" %>
 				  </div>
 					<%@portfolio_item.portfolio_images.each do |i|%>
 						<div class="carousel-item portfolioimg cover">
@@ -93,7 +93,7 @@
   			<% @related_portfolio.each do |portfolio| %>
 	  			<div class="portfolio-item design undefined">
 	  				<div class="portfolio-wrapper">
-	  					<%= image_tag portfolio_img(portfolio.main_image, 'main'), width: '100%'%>
+	  					<%= image_tag portfolio_img(portfolio.main_image, 'main'), width: '356px', height: '238px'%>
 	  					<div class="portfolio-overlay"></div>
 	  					<div class="portfolio-caption">
 	  						<h5 class="portfolio-title"><%= portfolio.title%></h5>
