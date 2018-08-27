@@ -19,6 +19,6 @@
 //= require social-share-button
 //= require html.sortable
 //= require turbolinks
-//= require md_simple_editor
 //= require_tree .
-//= require bootstrap-sprockets
+//= require bootstrap
+//= require md_simple_editor
