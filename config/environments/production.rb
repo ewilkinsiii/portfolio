@@ -84,8 +84,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.action_cable.allowed_request_origins = ['https://eugenes-portfolio.herokuapp.com', 'http://www.ewilkinsiii.pro']
-  config.action_cable.url = "wss://ewilkinsiii.pro/cable"
+  config.action_cable.allowed_request_origins = ['https://eugenes-portfolio.herokuapp.com', 'http://eugenes-portfolio.herokuapp.com',  'http://www.ewilkinsiii.pro']
+  config.action_cable.url = "wss://eugenes-portfolio.herokuapp.com/cable"
   
   config.action_mailer.default_url_options = {host: 'https://eugenes-portfolio.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
