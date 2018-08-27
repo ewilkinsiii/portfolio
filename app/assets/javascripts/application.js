@@ -21,4 +21,4 @@
 //= require md_simple_editor
 //= require turbolinks
 //= require_tree .
-//= require bootstrap-sprokets
+//= require bootstrap-sprockets
