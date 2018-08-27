@@ -18,7 +18,7 @@
 //= require cable
 //= require social-share-button
 //= require html.sortable
-//= require md_simple_editor
 //= require turbolinks
+//= require md_simple_editor
 //= require_tree .
 //= require bootstrap-sprockets
