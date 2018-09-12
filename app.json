@@ -1,7 +1,10 @@
 {
   "name": "portfolio",
   "scripts": {
-    "test-setup": "rails db:seed"
+    "test-setup": [
+      "rails db:migrate",
+      "rails db:seed"
+     ]
   },
   "formation": {
     "web": {
