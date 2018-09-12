@@ -1,6 +1,9 @@
 {
   "name": "portfolio",
   "scripts": {
+    "test-setup":[
+      'rails db:seed'
+      ]
   },
   "formation": {
     "web": {
