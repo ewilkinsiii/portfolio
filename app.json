@@ -1,20 +1,15 @@
 {
   "name": "portfolio",
+  "description": "Configuration for per-Pull-Request Reviews Apps on Heroku.",
   "scripts": {
-    "test-setup": [
-      "rails db:migrate",
-      "rails db:seed"
-     ]
+    "postdeploy": "LOG_LEVEL=INFO bin/rake review_app:seed"
   },
-  "formation": {
-    "web": {
-      "quantity": 1
-    },
-    "worker": {
-      "quantity": 1
-    }
-  },
-  "addons": [
+  "stack": "heroku-16",
+  "formation": [
+    { "process": "web",    "quantity": 1},
+    { "process": "worker", "quantity": 1}
+  ],
+   "addons": [
     "papertrail",
     "heroku-postgresql",
     "rediscloud",
@@ -24,5 +19,15 @@
     {
       "url": "heroku/ruby"
     }
-  ]
+  ],
+  "env": {
+    "Lots of other Env Vars...": "as you need",
+    
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    }
+  }
 }
