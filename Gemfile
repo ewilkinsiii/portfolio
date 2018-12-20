@@ -59,5 +59,6 @@ gem 'social-share-button', '~> 0.10.0'
 gem 'md_simple_editor', '~> 0.3.0'
 gem 'perfect-scrollbar-rails'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'rails_admin_simplemde', '~> 0.1.0.1'
 
 ruby "2.4.0"

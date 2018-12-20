@@ -13,6 +13,19 @@ class Blog < ApplicationRecord
   is_impressionable :counter_cache => true, :column_name => :impressions_count
   
   mount_uploader :image, BlogUploader
+
+  rails_admin do
+    field :title
+    field :body, :simplemde
+    field :created_at
+    field :updated_at
+    field :slug
+    field :status       
+    field :topic_id
+    field :keywords
+    field :impressions_count
+    field :image
+  end
   
   scope :latest, -> { order("Id DESC") }
   
