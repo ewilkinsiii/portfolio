@@ -1,17 +1,24 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded blog-nav">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="container">
-    <%= link_to "Eugene Wilkins III", root_path, class: 'navbar-brand' %>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void()" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar-nav mr-auto">
         <%= nav_helper 'nav-link', 'li' %>  
         <%= login_helper 'nav-link' %> 
         <%= link_to "Admin", rails_admin_path, class: 'nav-link' if logged_in?(:site_admin)%>
       </ul>
-    </div>
+  </div>
+
+  <div class="navbar" id="main">
+      <ul>
+        <li class="slide-btn"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
+        <li class="brand"><div><h3><span style="color:#0275d8">Eugene Wilkins III</span></h3></li>
+          <div class="nav nav-right">
+              <%= nav_helper 'nav-link', 'li' %>  
+              <%= login_helper 'nav-link login-links' %>
+              <li><%= link_to "Admin", rails_admin_path, class: 'nav-link' if logged_in?(:site_admin)%></li>
+          </div>
+      </ul>
   </div>
 </nav>
+
