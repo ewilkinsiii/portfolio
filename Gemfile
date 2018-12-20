@@ -56,9 +56,8 @@ gem 'pygments.rb', '~> 1.1', '>= 1.1.2'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'rails_admin', '~> 1.1', '>= 1.1.1'
 gem 'social-share-button', '~> 0.10.0'
-gem 'md_simple_editor', '~> 0.3.0'
 gem 'perfect-scrollbar-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'rails_admin_simplemde', '~> 0.1.0.1'
-
+gem 'simplemde', '~> 0.1.0'
 ruby "2.4.0"
