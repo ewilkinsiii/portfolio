@@ -613,7 +613,7 @@ nav */
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
-    border-bottom: 5px solid #ffd700;;
+    border-bottom: 5px solid #ffd700;
     }
      
     .navbar-fixed-top.cbp-af-header-shrink {
@@ -961,3 +961,23 @@ contact
     color: BLACK;
     background-color: #ffd700;
 }
+
+.tech-news{
+    font-family: 'Indie Flower', cursive;
+    color: $gold;
+    margin: 20px;
+  }
+  
+  .tech-news a {
+    color: #e5e4e2;
+  }
+  
+  .tech-news >.card {
+    padding: 30px;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    background: black;
+    border: 5px solid #ffd700;
+  }
