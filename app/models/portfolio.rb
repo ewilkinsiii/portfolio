@@ -1,5 +1,6 @@
 class Portfolio < ApplicationRecord
   belongs_to :category
+  has_many :refs
   has_many :technologies, dependent: :destroy
   has_many :portfolio_images, dependent: :destroy
   accepts_nested_attributes_for :portfolio_images, :technologies,

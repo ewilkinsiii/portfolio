@@ -20,16 +20,65 @@ module ApplicationHelper
   def copyright_generator
     DarkstarudViewTool::Renderer.copyright "DarkStar UD", "All rights reserved"
   end
-  
-  def nav_items
+
+  def home_nav
     [
       {
         url: root_path,
         title: 'Home'
       },
       {
-        url: about_me_path,
+        url: "#page-profile",
         title: 'About Me'
+      },
+
+      {
+        url: "#page-skills",
+        title: 'Skills'
+      },
+
+      {
+        url: "#page-education",
+        title: 'Education'
+      },
+      
+      {
+        url: "#page-experience",
+        title: 'Experience'
+      },
+
+      {
+        url: "#page-reference",
+        title: 'Reference'
+      },
+
+      {
+        url: "#page-contact",
+        title: 'Contact'
+      },
+
+      {
+        url: blogs_path,
+        title: 'Blogs'
+      },
+
+      {
+        url: portfolios_path,
+        title: 'Portfolios'
+      },
+      
+      {
+        url: tech_news_path,
+        title: 'Tech News'
+      }
+    ]
+  end
+
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: 'Home'
       },
       {
         url: new_contact_path,
@@ -46,14 +95,20 @@ module ApplicationHelper
       {
         url: tech_news_path,
         title: 'Tech News'
-      },
+      }
     ]
   end
   
-  def nav_helper style, tag_type
-    nav_links = ''
-    nav_items.each do |item|
-      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+  def nav_helper style, tag_type, contoller
+     nav_links = ''
+     if contoller == 'pages'
+      home_nav.each do |item|
+        nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+      end
+    else
+      nav_items.each do |item|
+        nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+      end
     end
     nav_links.html_safe
   end

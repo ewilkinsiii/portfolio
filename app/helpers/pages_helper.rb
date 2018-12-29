@@ -22,4 +22,8 @@ module PagesHelper
       "<a href='#{url}' target='_blank'>#{url}</a>"
     end.html_safe
   end
+
+  def ref_gravatar_helper user
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}",title:"Widgets", id:"widgetCardIcon", class:"imagecard"
+  end
 end

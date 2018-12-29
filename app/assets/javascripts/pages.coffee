@@ -17,3 +17,4 @@ $(document).ready ->
     false
   return
 
+$('.carousel').carousel interval: 3000

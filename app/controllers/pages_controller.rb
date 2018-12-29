@@ -4,6 +4,7 @@ class PagesController < ApplicationController
    access all: [:home, :about, :tech_news], site_admin: :all
    
   def home
+    @contact = Contact.new
     @posts = Blog.all
     @skills = Skill.where("percent_utilized  > ?" , 49)
     @experiences = @user.experiences.order(end_year: :desc).limit(3)
