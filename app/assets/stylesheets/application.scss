@@ -273,14 +273,9 @@ h1, h2, h3, h4, h5, h6 {
    Dividers
    ========================================================================== */
 
-/*    section {
-    display: block;
-    height: 100vh;
-    width:100%;
-    padding: 60px;
-    padding-left: 120px;
-    box-sizing:border-box;
-} */
+section {
+    min-height: 100vh;
+} 
 
    .section-header {
     text-align: center;
@@ -550,7 +545,7 @@ nav */
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #ffd700;
     display: block;
     transition: 0.3s;
   }
@@ -591,11 +586,11 @@ nav */
   }
   .nav li a{
     text-decoration: none;
-    color: #818181;
+    color: #ffd700;
   }
   .nav li:hover{
     border-bottom: 3px solid;
-    border-color: #0275d8;
+    border-color: #ffd700;
     padding-bottom: 6px;
     -webkit-transition:all 0.3s ease;
   -moz-transition:all 0.3s ease;
@@ -615,7 +610,6 @@ nav */
     background: #f6f6f6;
     z-index: 999;
     height: 90px;
-    overflow: hidden;
     -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     transition: height 0.3s;
