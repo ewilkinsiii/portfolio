@@ -7,10 +7,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.name%>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
               <%= login_helper 'dropdown-item' %>
               <%= link_to "Admin", rails_admin_path, class: 'dropdown-item' if logged_in?(:site_admin)%>
-            </div>
+            
         </li>
       </ul>
   </div>
