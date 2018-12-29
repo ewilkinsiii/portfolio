@@ -1,10 +1,4 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-<section id="page-contact" class="page-contact">
-  <div class="container">
-    <h1 class="section-title" style="color: #ffd700; "> Create New Reference</h1>
-    <div class="spacer"></div>
-    <br>
-    <br>
     <%= form_for(@ref) do |f| %>
       <% if @ref.errors.any? %>
         <% @ref.errors.full_messages.each do |error| %>
@@ -85,5 +79,3 @@
         
       <% end %>
    </div>
-  </div>
-</section>
