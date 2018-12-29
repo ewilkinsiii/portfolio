@@ -1,50 +1,64 @@
-<div class="tab-pane fade scrollLeft" id="reference" role="tabpanel" aria-labelledby="reference-tab">
-  <% @references.each do |ref|%>
-   <blockquote class="quote-box">
-      <p class="quotation-mark">
-        
-      </p>
-      <p class="quote-text">
-        <%= ref.comment %> 
-      </p>
-      <hr>
-      <div class="blog-post-actions">
-        <div class="row">
-          <div class="col-md-1">
-          <p class="blog-post-bottom pull-left">
-            <%= gravatar_helper ref%>
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-8 like" data-score= <%=ref%>>
-            <%= "I've known " +  @user.name + " for "%> <%= Time.current.year - ref.years_known%> <%=" years as his " + ref.relationship.name + "." %>
-            Comment posted by <span class="ref-name"><%= ref.name %></span> <%= distance_of_time_in_words(ref.created_at, Time.now) %> ago
-            <h4><span class="badge badge-likes"><%= fa_icon("thumbs-up")%> <span class="badge quote-badge"><%= ref.votes_for.size  %></span></span> 
-              <% if current_user.liked? ref %>
-                <%= link_to fa_icon("heart"), unlike_ref_path(ref.slug), method: :put,
-                  id: "like_#{ref.slug}",
-                  class: "heart"%>
-              <% else %>
-                <%= link_to fa_icon("heart"), like_ref_path(ref.slug), method: :put,
-                  id: "like_#{ref.slug}",
-                  class: "heart-empty" %>
-              <% end %> 
-              <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref), title: 'Edit Reference', 'data-toggle' => 'Edit Reference', 'data-placement' => 'right' if logged_in?(:site_admin) %>
-              <% if ref.status ==  'draft'%> <i class="fab fa-firstdraft" style="color: blue;"></i><%end%>
-            </h4>
-          </div>
-          </p>
-        </div>
+<section id="page-reference" class="page-experience">
+  <br>
+  <br>
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title"><span>References</span></h2>
+      <div class="spacer"></div>
+      <p class="section-subtitle">Lorem ipsum dolor sit amet, id iusto oportere mel. </p>
+    </header>
+    <div class="container mt-4">
+      <div id="carouselExampleIndicators" class="carousel slide text-center" data-ride="carousel" style="padding-left: 30px;">
+        <ol class="carousel-indicators">
+          <% if @references.length > 3 %> <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> <%end%>
+          <% if @references.length > 3 %> <li data-target="#carouselExampleIndicators" data-slide-to="1"></li><%end%>
+          <% if @references.length > 6 %><li data-target="#carouselExampleIndicators" data-slide-to="2"></li><%end%>
+        </ol>
+        <div class="carousel-inner">
+        <% @references.each_with_index  do |ref, index|%>
+          <!-- <%= index %> -->
+          <% if index  == 0 %>
+                <div class="row carousel-item active">
+          <%end%>
+
+          <% if index  == 3  || index  == 6 %>
+                <div class="row carousel-item">
+          <%end%>
+
+          <div class="col-lg-4 col-md-6 col-sm-8 float-lg-left m-sm-auto">
+            <div class="card-base" >
+              <div class="card-icon"><%= ref_gravatar_helper ref%><span class="glyphicon glyphicon-user"></span></a>
+                <div class="card-data widgetCardData">
+                  <br>
+                  <h2 class="box-title" style="color: #ffd700 ;"><%= ref.name %></h2>
+                  <div class="name-spacer"></div>
+                  <h5 style="color: #ffd700 ;"> <%= ref.company %></h5>
+                  <p class="card-block text-center"><%= fa_icon("quote-left")%> <%= ref.comment %> <%= fa_icon("quote-right")%> </p>
+                  <h4><span class="badge badge-likes"><%= fa_icon("thumbs-up")%> <span class="badge quote-badge"><%= ref.votes_for.size  %></span></span> 
+                  <% if current_user.liked? ref %>
+                      <%= link_to fa_icon("heart"), unlike_ref_path(ref.slug), method: :put,
+                      id: "like_#{ref.slug}",
+                      class: "heart"%>
+                  <% else %>
+                      <%= link_to fa_icon("heart"), like_ref_path(ref.slug), method: :put,
+                      id: "like_#{ref.slug}",
+                      class: "heart-empty" %>
+                  <% end %> 
+                  <%= link_to fa_icon("pencil-square-o"), edit_ref_path(ref), title: 'Edit Reference', 'data-toggle' => 'Edit Reference', 'data-placement' => 'right' if logged_in?(:site_admin) %>
+                  <% if ref.status ==  'draft'%> <i class="fab fa-firstdraft" style="color: blue;"></i><%end%>
+                  </h4>
+                  <%= link_to "View Project", portfolio_show_path(ref.portfolio_id), class:"btn btn-default" unless ref.portfolio_id.nil?  %>
+                  </div>
+                </div>
+                  <div class="space"></div>
+              </div>
+          </div> 
+          <% if index == 2 || index == 5%>
+              </div>
+          <%end%>
+        <%end%>
       </div>
-    </blockquote>
-  <%end%>
-  <%= link_to "Add New Reference", new_ref_path, class: 'btn btn-send' if logged_in?(:site_admin)%>
-</div>
-<script>
-    $('.like').raty({
-      path: '/assets/',
-      readOnly: true,
-      score:function() {
-        return $(this).attr('data-score');
-      }
-  })
-</script>
+      <%= link_to "Add New Reference", new_ref_path, class: 'btn btn-default ref-btn' if logged_in?(:site_admin)%>
+    </div>
+  </div>
+</section>

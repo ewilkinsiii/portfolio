@@ -8,7 +8,7 @@
       <div class="col-sm-4 py-4">
         <h4 class="text-white">Explore</h4>
         <ul class="list-unstyled">
-          <%= nav_helper 'text-white', 'li', 'portfolio'%>
+          <%= nav_helper 'text-white', 'li', params[:controller], params[:action] %>
           <li><%= link_to "Create New Item", new_portfolio_path, class: "text-white" if logged_in?(:site_admin)%></li>
           <%= login_helper 'text-white'%>
           <li><%= link_to "Admin", rails_admin_path, class: 'text-white' if logged_in?(:site_admin)%></li>

@@ -99,9 +99,9 @@ module ApplicationHelper
     ]
   end
   
-  def nav_helper style, tag_type, contoller
+  def nav_helper style, tag_type, controller, action
      nav_links = ''
-     if contoller == 'pages'
+     if controller ==  'pages' && action == 'home'
       home_nav.each do |item|
         nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
       end

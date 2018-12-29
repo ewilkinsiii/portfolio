@@ -1,51 +1,32 @@
-<div class="tab-pane fade scrollLeft" id="experiece" role="tabpanel" aria-labelledby="experiece-tab">
-  <p></p>
-  <section>
-  	<div class="container">
-  		<div class="row">
-  		  <% @experiences.each do |experience|%>
-    			<div class="col-md-6">
-            		<!-- Card Flip -->
-    				<div class="card-flip">
-    					<div class="flip">
-    						<div class="front">
-    							<!-- front content -->
-    							<div class="card col-sm d-flex">
-    							  <img class="card-img-top" src=<%= experience.thumb_image %> style="height: 180px; width: 100%; display: block;" data-holder-rendered="true">
-    							  <div class="card-block flex-fill">
-    							    <h4 class="card-title"><%= experience.title %></h4>
-    							    <%= experience.start_month + ' ' + experience.start_year.to_s %> - 
-                      <% if experience.end_year.to_s.present? %>
-                        <%= experience.end_month + ' ' + experience.end_year.to_s %>
-                      <% else %>
-                         Present
-                      <%end%>
-    							    <p class="card-text"> <%=  experience.city + ' ' +  experience.state  + '.'%></p>
-    							    <a href="#" class="btn btn-primary">Go somewhere</a>
-    							  </div>
-    							</div>
-    						</div>
-    						<div class="back">
-    							<!-- back content -->
-    							<div class="card col-sm d-flex">
-    							  <h6 class="card-subtitle text-muted">Job Desciption</h6>
-    							  <div class="card-block flex-fill">
-    							    <hr>
-    							    <% experience.experience_desciptions.by_position.each do |desciption| %>
-    							      <p class="card-text"><%= desciption.body%></p>
-    							    <%end%>
-    							    <hr>
-    							    <a href="#" class="card-link">Card link</a>
-    							    <a href="#" class="card-link">Another link</a>
-    							  </div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-            <!-- End Card Flip -->
-    			</div>
-    		<%end%>
-  		</div>
-  	</div>
-  </section>
-</div>
+<section id="page-experience" class="page-experience">
+	<br>
+	<br>
+	<div class="container">
+		<header class="section-header">
+			<h2 class="section-title"><span>Experience</span></h2>
+			<div class="spacer"></div>
+			<p class="section-subtitle">Lorem ipsum dolor sit amet, id iusto oportere mel. </p>
+		</header>
+		<div class="row">
+			<% @experiences.each do |experience|%>
+				<div class="col-md-4">
+						<article class="experience">
+							<header>
+								<h3><%= experience.name %></h3>
+								<p> <%= "#{experience.title} / #{experience.city}, #{experience.state.capitalize} / #{experience.start_year.to_s} -"  %> 
+									<% if experience.end_year.to_s.present? %>
+										<%= experience.end_year.to_s%>
+									<% else %>
+										Present
+									<%end%>
+								</p>
+							</header>
+							<% experience.experience_desciptions.by_position.each do |desciption| %>
+								<p><%= desciption.body%></p>
+							<%end%>
+						</article>
+				</div>
+			<%end%>
+		</div>
+	</div>
+</section>
