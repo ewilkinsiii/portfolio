@@ -955,3 +955,10 @@ contact
 .hidden{
     display: none;
 }
+
+
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+    background-color: gold;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
