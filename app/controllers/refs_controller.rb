@@ -59,12 +59,12 @@ class RefsController < ApplicationController
   
   def like
     @ref.liked_by current_user
-    redirect_to about_me_path + "#reference", notice: "Saved Like" 
+    redirect_to root_path + "#page-reference", notice: "Saved Like" 
   end
   
   def unlike
     @ref.unliked_by current_user
-    redirect_to about_me_path + "#reference", notice: "Removed Like"
+    redirect_to root_path + "#page-reference", notice: "Removed Like"
   end
   
   private
@@ -81,10 +81,10 @@ class RefsController < ApplicationController
                                 :comment,
                                 :years_known,
                                 :company,
-                                :project,
                                 :code,
                                 :relationship_id,
                                 :user_id,
+                                :portfolio_id,
                                 :status
                               )
   end

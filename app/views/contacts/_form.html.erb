@@ -1,0 +1,54 @@
+ <section id="page-contact" class="page-contact">
+ <br>
+<br>
+  <div class="container">
+    <header class="section-header">
+        <h2 class="section-title"><span style="color: #ffd700;">Contact</span></h2>
+        <div class="spacer"></div>
+        <p class="section-subtitle">Get in Touch </p>
+    </header>
+    <div class="row">
+        <div class="col-sm-12">
+          <br>
+          <!-- Configure the contact form by adding your email address on mail/contact_me.php line 17 -->
+          <form class="form-horizontal" id="contactForm" novalidate>
+            <%= form_for  @contact do |f| %>
+              <div class="control-group">
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <%= f.text_field :name, class:"form-control input-lg", id:"name", name:"name", placeholder:"Name",required: true %>
+                    <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="email">Email Address</label>
+                <div class="controls">
+                      <%= f.email_field :email, class:"form-control input-lg", name:"email", id:"email", placeholder:"Email", required: true%>
+                    <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="message">Message</label>
+                <div class="controls">
+                    <%= f.text_area :message, as: :text, class:"form-control input-lg", rows:"5", id:"comment", name:"message" , placeholder:"Type Your Message/Feedback here...", required: true%>
+                    <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="hidden">
+                  <%= f.label :nickname %><br>
+                  <%= f.text_field :nickname, hint: 'leave this field blank', class:"form-control"  %>
+              </div>
+
+              <div class="form-actions">
+              <div id="success"></div>
+                    <%= f.submit 'Send', class: "btn btn-default btn-lg btn-block" %>
+              </div>
+            <%end%>
+          </form>
+          <!-- End contact-form -->
+      </div>
+    </div>
+    <!-- End row -->
+  </div>
+</section>

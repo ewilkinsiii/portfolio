@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812171519) do
+ActiveRecord::Schema.define(version: 20181229045416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,7 +180,6 @@ ActiveRecord::Schema.define(version: 20180812171519) do
     t.text     "comment"
     t.integer  "years_known"
     t.string   "company"
-    t.string   "project"
     t.string   "code"
     t.integer  "relationship_id"
     t.integer  "user_id"
@@ -188,6 +187,7 @@ ActiveRecord::Schema.define(version: 20180812171519) do
     t.datetime "updated_at",                  null: false
     t.string   "slug"
     t.integer  "status",          default: 0
+    t.integer  "portfolio_id"
     t.index ["relationship_id"], name: "index_refs_on_relationship_id", using: :btree
     t.index ["slug"], name: "index_refs_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_refs_on_user_id", using: :btree

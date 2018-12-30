@@ -3,7 +3,7 @@
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void()" class="closebtn" onclick="closeNav()">&times;</a>
       <ul class="navbar-nav mr-auto">
-        <%= nav_helper 'nav-link', 'li' %>  
+        <%= nav_helper 'nav-link', 'li', params[:controller], params[:action]%>  
         <%= login_helper 'nav-link' %> 
         <%= link_to "Admin", rails_admin_path, class: 'nav-link' if logged_in?(:site_admin)%>
       </ul>
@@ -14,7 +14,7 @@
         <li class="slide-btn"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
         <li class="brand"><div><h3><span style="color:#0275d8">Eugene Wilkins III</span></h3></li>
           <div class="nav nav-right">
-              <%= nav_helper 'nav-link', 'li' %>  
+              <%= nav_helper 'nav-link', 'li' ,params[:controller], params[:action] %>  
               <%= login_helper 'nav-link login-links' %>
               <li><%= link_to "Admin", rails_admin_path, class: 'nav-link' if logged_in?(:site_admin)%></li>
           </div>

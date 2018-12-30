@@ -1,12 +1,18 @@
-<div class="inner cover container-fluid">
-    <h1 class="cover-heading">Ruby On Rails Tech-News</h1>
+<br>
+<br>
+<section id="page-contact" class="page-contact">
+  <div class="container">
+  <h1 class="section-title" style="color: #ffd700; "> Ruby On Rails Tech-News</h1>
+    <div class="spacer"></div>
+    <br>
     <div class="row">
       <% @tweets.each do |tweet| %>
-        <div class="tech-news col-sm d-flex">
+        <div class="tech-news col-md d-flex">
             <div class="card card-body flex-fill">
               <%= twitter_parser tweet %>
             </div>
           </div>
       <%end%>
     </div>
-</div>
+  </div>
+</section>

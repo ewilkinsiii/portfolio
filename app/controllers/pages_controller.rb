@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
-   before_action :set_user, only: [:about]
+   before_action :set_user, only: [:home]
    before_action :set_skills, only: [:about, :home]
    access all: [:home, :about, :tech_news], site_admin: :all
    
   def home
+    @contact = Contact.new
     @posts = Blog.all
-    @skills = Skill.where.not(image: [nil, ""])
+    @skills = Skill.where("percent_utilized  > ?" , 49)
+    @experiences = @user.experiences.order(end_year: :desc).limit(3)
+    @educations = @user.educations
+    @references = @user.refs
   end
 
   def about
