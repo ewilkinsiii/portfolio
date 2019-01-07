@@ -86,7 +86,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.4)
     crass (1.0.4)
     darkstarud_view_tool (0.1.0)
     debug_inspector (0.0.3)
@@ -174,7 +174,7 @@ GEM
     orm_adapter (0.5.0)
     perfect-scrollbar-rails (0.6.15)
       railties (>= 3.2, < 6.0)
-    petergate (1.7.5)
+    petergate (2.0.1)
       activerecord (> 4.0.0)
     pg (0.20.0)
     popper_js (1.14.5)
@@ -345,7 +345,7 @@ DEPENDENCIES
   mail_form (~> 1.6)
   mini_magick (~> 4.7)
   perfect-scrollbar-rails
-  petergate (~> 1.7, >= 1.7.3)
+  petergate (~> 2.0)
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.0)
