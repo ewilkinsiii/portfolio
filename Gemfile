@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.0.7'
+gem 'rails', '~> 5.2.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -34,18 +34,18 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id', '~> 5.2'
-gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'devise', '~> 4.5'
 gem 'bootstrap', '~> 4.2.1'
 gem 'darkstarud_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 2.0'
-gem 'mail_form', '~> 1.6'
+gem 'mail_form', '~> 1.7'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'kaminari', '~> 0.14'
 gem 'jquery-ui-rails', '~> 5.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.7'
 gem 'carrierwave-aws', '~> 1.1'
-gem 'dotenv-rails', '~> 2.2'
+gem 'dotenv-rails', '~> 2.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.1'
