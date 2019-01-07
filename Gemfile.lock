@@ -241,7 +241,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redcarpet (3.4.0)
-    redis (3.3.3)
+    redis (4.1.0)
     remotipart (1.4.2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -357,7 +357,7 @@ DEPENDENCIES
   rails_admin (~> 1.4)
   rails_admin_simplemde (~> 0.1.0.1)
   redcarpet (~> 3.4)
-  redis (~> 3.3, >= 3.3.3)
+  redis (~> 4.1)
   sass-rails (~> 5.0)
   social-share-button (~> 0.10.0)
   spring
