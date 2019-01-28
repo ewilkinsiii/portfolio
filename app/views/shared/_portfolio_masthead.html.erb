@@ -7,6 +7,7 @@
         <p>
           <%= link_to "More about me",root_path,class: "btn btn-primary"%>
           <%= link_to "My Blogs", blogs_path, class: "btn btn-secondary"%>
+          <%= link_to "Add New Portfolio",new_portfolio_path,class: "btn btn-primary" if logged_in?(:site_admin)%>
       </div>
     </div>
   </div>
