@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require html.sortable
 //= require cocoon
 //= require gritter
 //= require cable
-//= require html.sortable
 //= require social-share-button
 //= require turbolinks
 //= require bootstrap
