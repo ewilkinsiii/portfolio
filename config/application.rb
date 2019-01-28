@@ -19,7 +19,6 @@ Bundler.require(*Rails.groups)
 
 module Profile
   class Application < Rails::Application
-    config.assets.initialize_on_precompile = false
     config.eager_load_paths << "#{Rails.root}/lib"
     config.secret_key_base = ENV["SECRET_KEY_BASE"]
   end
