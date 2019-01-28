@@ -780,7 +780,6 @@ h3.single-portfolio-title {
 }
 
 .footer-copyright {
-    border-top: 1px solid rgba(255, 255, 255, .05);
     padding: 20px 0;
 }
 
@@ -996,3 +995,132 @@ h3.single-portfolio-title {
 .img-fluid{
     height: 400px;
 }
+//Blog Nav
+.nav-right{
+    float: right;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgba(51,55,68,0.6);
+    overflow-y:hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidenav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .animate:hover {padding-left:50px;background-color:orange;transition:all 0.7s ease;}
+  
+  .sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    //margin-left: 400px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    background-color: #000;
+  }
+  
+  /* End SlideBar */
+  
+  
+  
+  .navbar {
+    width: 100%;
+    box-shadow: 3px 3px 3px #222222;
+    transition: 0.5s;
+    font-size: 20px;
+  }
+  .nav{padding-right: 40px;}
+  .nav li{
+    float:right;
+    display: block;
+    padding:9px 10px;
+  }
+  .nav li a{
+    text-decoration: none;
+    color: #818181;
+  }
+  .nav li:hover{
+    border-bottom: 3px solid;
+    border-color: #0275d8;
+    padding-bottom: 6px;
+    -webkit-transition:all 0.3s ease;
+  -moz-transition:all 0.3s ease;
+  -o-transition:all 0.3s ease;
+  transition:all 0.3s ease;
+  }
+  .nav li a:hover, .nav li a:focus{
+    color: #e5e4e2;
+    transition:all 0.3s ease;
+  }
+  .slide-btn{
+    float: left;
+    display: block;
+    margin:0px 20px;
+    color: #818181;
+  }
+  .brand{
+    margin-left: 30px;
+    color: #FFF;
+    display: block;
+    float: left;
+    padding-top:9px;
+  }
+  @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;} 
+  .test a {font-size: 18px;} 
+  }
+  @media screen and (max-width: 680px) {
+    
+    .nav a {overflow:hidden;display: none;}
+    .slide-btn {display: block;}
+  }
+  @media screen and (min-width: 680px) {
+    
+    .slide-btn {overflow:hidden;display: none;}
+  }
+
+  /* Nav links */
+
+/* Active state gets a caret at the bottom */
+ .nav-link.active {
+    color: #fff;
+  } 
+  
+  .nav-link {
+    display: inline;
+  } 
+  .login-links{
+    color: #818181;
+  }
+  
+  .login-links:hover{
+    border-bottom: 3px solid;
+    border-color: #0275d8;
+    color: #e5e4e2;
+    padding-bottom: 6px;
+    -webkit-transition:all 0.3s ease;
+  -moz-transition:all 0.3s ease;
+  -o-transition:all 0.3s ease;
+  transition:all 0.3s ease;
+  }

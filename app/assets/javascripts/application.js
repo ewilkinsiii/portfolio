@@ -16,8 +16,8 @@
 //= require cocoon
 //= require gritter
 //= require cable
-//= require social-share-button
 //= require html.sortable
+//= require social-share-button
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
