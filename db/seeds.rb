@@ -118,11 +118,11 @@ Address.create!(
 puts "1 Address created"
 
 links_list = [
-    ["github", "social media", 1 , "https://github.com/ewilkinsiii"],
-    ["codepen", "social media", 1, "http://codepen.io/ewilkinsiii/"],
+    ["github", "social media", 1 , "https://github.com"],
+    ["codepen", "social media", 1, "http://codepen.io"],
     ["jsfiddle", "social media", 1, "https://jsfiddle.net/"],
-    ["twitter", "social media", 1, "https://twitter.com/ewilkinsiii" ],
-    ["linkedin", "social media", 1, "https://www.linkedin.com/pub/eugene-wilkins-iii/21/aa5/188"]
+    ["twitter", "social media", 1, "https://twitter.com/ "],
+    ["linkedin", "social media", 1, "https://www.linkedin.com/pub/"]
   ]
  
 
