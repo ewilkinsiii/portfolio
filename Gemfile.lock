@@ -178,7 +178,7 @@ GEM
       railties (>= 3.2, < 6.0)
     petergate (2.0.1)
       activerecord (> 4.0.0)
-    pg (0.20.0)
+    pg (1.2.1)
     popper_js (1.14.5)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -349,7 +349,7 @@ DEPENDENCIES
   mini_magick (~> 4.7)
   perfect-scrollbar-rails
   petergate (~> 2.0)
-  pg (~> 0.18)
+  pg (~> 1.2)
   pry-byebug
   puma (~> 3.0)
   pygments.rb (~> 1.1, >= 1.1.2)
