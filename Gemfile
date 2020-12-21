@@ -57,6 +57,6 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'rails_admin', '~> 1.4'
 gem 'social-share-button', '~> 0.10.0'
 gem 'perfect-scrollbar-rails'
-gem 'acts_as_votable', '~> 0.11.1'
+gem 'acts_as_votable', '~> 0.13.1'
 gem 'rails_admin_simplemde', '~> 0.1.0.1'
 ruby "2.4.0"
