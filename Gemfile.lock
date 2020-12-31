@@ -38,8 +38,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (4.0.0)
-      activerecord (>= 4.0)
+    acts-as-taggable-on (7.0.0)
+      activerecord (>= 5.0, < 6.2)
     acts_as_votable (0.11.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
@@ -86,7 +86,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.7)
     crass (1.0.4)
     darkstarud_view_tool (0.1.0)
     debug_inspector (0.0.3)
@@ -128,7 +128,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.5.1)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     impressionist (1.5.2)
       nokogiri (~> 1.6)
@@ -165,7 +165,7 @@ GEM
     mini_magick (4.7.0)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
-    minitest (5.11.3)
+    minitest (5.14.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     naught (1.1.0)
@@ -300,7 +300,7 @@ GEM
       memoizable (~> 0.4.2)
       naught (~> 1.1)
       simple_oauth (~> 0.3.1)
-    tzinfo (1.2.5)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -322,7 +322,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 4.0)
+  acts-as-taggable-on (~> 7.0)
   acts_as_votable (~> 0.11.1)
   awesome_print
   better_errors (~> 2.4)
